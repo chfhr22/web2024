@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숙제</title>
+</head>
+<body>
+    <div class="main__sample">
+        <div id="sample01" class="sample">
+            <h3>문제 정보 변수에 데이터 입력</h3>
+            <p>변수에 데이터 입력</p>
+<pre class="line-numbers"><code class="language-js">{
+const infoDate = "2021년 10월";
+const infoType = "정보처리 기능사";
+const infoNum = "1";
+const infoQuestion = "CPU의 정보처리 속도 단위 중 초당 100만 개의 연산을 수행한다는 의미의 단위는?";
+const infoAnswer = "MIPS";
+const infoDesc = "LIPS는 초당 1개, KIPS는 초당 1000개, MIPS는 초당 100만개의 연산을 수행하는 것을 의미한다.";
+}
+</code></pre>
+            <p class="desc">
+                line 2 : infoDate변수에 날짜 입력 <br>
+                line 3 : infoType변수에 어느 시험인지 입력 <br>
+                line 4 : infoNum변수에 문제 번호 입력 <br>
+                line 5 : infoQuestion변수에 질문 입력 <br>
+                line 6 : infoAnswer변수에 정답 입력 <br>
+                line 7 : infoDesc변수에 해설 입력
+            </p>
+        </div>
+        <!-- //sample01 -->
+
+        <div id="sample02" class="sample">
+            <h3>선택자 초기화</h3>
+            <p>document.querySelector()</p>
+<pre class="line-numbers"><code class="language-js">{
+const quizWrap = document.querySelector(".quiz__wrap");
+const quizDate = quizWrap.querySelector(".quiz__date");
+const quizType = quizWrap.querySelector(".quiz__type");
+const quizNum = quizWrap.querySelector(".quiz__question em");
+const quizQuestion = quizWrap.querySelector(".quiz__question span");
+const quizAnswer = quizWrap.querySelector(".quiz__answer");
+const quizDesc = quizWrap.querySelector(".quiz__desc");
+const quizConfirm = quizWrap.querySelector(".quiz__confirm");
+const quizInput = quizWrap.querySelector(".quiz__input input");
+const quizAnimation =quizWrap.querySelector(".quiz__animation");
+}
+</code></pre>
+            <p class="desc">
+                document.querySelector()에서 <br>
+                querySelector()는 문서 내에서 요소를 선택하는 데 사용되며, <br>
+                선택을 시작할 위치를 지정하지 않으면 document 객체에서부터 검색을 시작한다. <br>
+                const quizWrap = document.querySelector(".quiz__wrap");이 시작위치의 defalt값이고, <br>
+                const quizDate = quizWrap.querySelector(".quiz__date");이 시작위치를 quizWrap부터 검색을 하는데, <br>
+                이렇게 함으로써 선택 범위를 좁히고 원하는 요소를 더 정확하게 선택할 수 있다.
+            </p>
+        </div>
+        <!-- //sample02 -->
+
+        <div id="sample03" class="sample">
+            <h3>문제 출력</h3>
+            <p>.innerText</p>
+<pre class="line-numbers"><code class="language-js">{
+quizDate.innerText = infoDate;
+quizType.innerText = infoType;
+quizNum.innerText = infoNum;
+quizQuestion.innerText = infoQuestion;
+quizAnswer.innerText = infoAnswer;
+quizDesc.innerText = infoDesc;
+}
+</code></pre>
+            <p class="desc">
+                .innerText는 요소의 내용을 설정하거나 가져오는 속성이다. <br>
+                innerText를 사용하여 변수에 저장된 정보를 HTML 요소의 텍스트로 설정한다.
+                문제 정보 부분에서 info~~을 변수로 설정하면서 값을 주었는데, <br>
+                이를 선택자 부분 quiz~~에게 값을 주면서 innerText메소드를 줘서 원하는 위치에 데이터를 출력할 수 있다.
+            </p>
+        </div>
+        <!-- //sample03 -->
+
+        <div id="sample04" class="sample">
+            <h3>정답 해설 숨기기</h3>
+            <p>classList.add()</p>
+<pre class="line-numbers"><code class="language-js">{
+quizAnswer.classList.add("none");
+quizDesc.classList.add("none");
+}
+</code></pre>
+            <p class="desc">
+                CSS에 미리 .none {display: none;}을 입력해 두고, <br>
+                보이지 않았으면 하는곳에 해당 클래스를 추가하면 안보이게할 수 있는데, <br>
+                이때 클래스를 추가하는 방법이 classList.add를 사용하는 것이다. <br>
+                만약, 클래스를 없애고 싶다면 classList.remove를 사용하면 된다.
+            </p>
+        </div>
+        <!-- //sample04 -->
+
+        <div id="sample05" class="sample">
+            <h3>정답 확인하기</h3>
+            <p>addEventListener()</p>
+<pre class="line-numbers"><code class="language-js">{
+quizConfirm.addEventListener("click", () => {
+    const userAnswer = quizInput.value;           
+
+    if(infoAnswer == userAnswer){
+        quizAnimation.classList.add("like");
+    } else{
+        quizAnimation.classList.add("dislike");
+    };
+    quizConfirm.classList.add("none");
+    quizInput.classList.add("none");
+    quizDesc.classList.remove("none");
+    quizAnswer.classList.remove("none");
+});
+}
+</code></pre>
+            <p class="desc">
+                addEventListener()메소드는 이벤트를 처리하고 특정 동작을 수행하는 메소드이다. <br>
+                이 메소드를 사용하면 콜백함수를 같이 사용할 수 있는데, 이벤트가 발생시 해당 함수가 작동한다. <br>
+                기본형은 element.addEventListener(event, function, useCapture);이며, <br>
+                element : 이벤트를 수신할 HTML요소이다. <br>
+                event : 이벤트의 종류를 나타내는 부분, 예로 "click", "mouseover", "keydown"등이 있다. <br>
+                function : 이벤트가 발생했을 때 실행될 함수이다. <br>
+                useCapture : 선택사항으로 이벤트 캡처링을 사용할지 여부를 나타내는 불리언값이다. 보통false로 설정하며, <br>
+                이 경우 이벤트 버블링이 사용된다. <br><br>
+                
+                line 2 : quizConfirm을 click하면 addEventListener의 효과로 콜백함수가 작동한다. <br>
+                line 3 : userAnswer에 유저가 입력한 값을 가져온다. <br>
+                line 5~6 : if문을 사용하여 유저의 입력값과 infoAnswer가 같다면, <br>
+                quizAnimation.classList.add("like");이 실행되어 quizAnimation부분에 like 클래스가 추가된다. <br>
+                line 7~8 : 그 외에는 오답으로 인식하여 quizAnimation.classList.add("dislike");의 실행으로 <br>
+                quizAnimation에 dislike 클래스가 추가된다. <br>
+                line 10~13 : 이 부분은 정답과 상관없이 해당 부분이 유저에게 안보이게하는 스크립트이다.
+            </p>
+        </div>
+        <!-- //sample05 -->
+
+    </div>  
+    <!-- //main__sample -->
+</body>
+</html>

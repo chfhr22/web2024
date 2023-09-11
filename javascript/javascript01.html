@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 저장하기</title>
+
+    <link rel="stylesheet" href="https://webfontworld.github.io/gmarket/GmarketSans.css">
+    <link rel="stylesheet" href="https://websfont.github.io/nanumSquareNeo/nanumSquareNeo.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../assets/css/default.min.css">
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1><a href="index.html">javascript</a></h1>
+            <nav>
+                <ul>
+                    <li class="active"><a href="javascript01.html">데이터 저장하기</a></li>
+                    <li><a href="javascript02.html">데이터 불러오기</a></li>
+                    <li><a href="javascript03.html">데이터 실행하기</a></li>
+                    <li><a href="javascript04.html">데이터 제어하기</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript05.html">문자열 객체</a></li>
+                    <li><a href="javascript06.html">배열 객체</a></li>
+                    <li><a href="javascript07.html">수학 객체</a></li>
+                    <li><a href="javascript08.html">브라우저 객체</a></li>
+                    <li><a href="javascript09.html">요소 객체</a></li>
+                    <li><a href="javascript10.html">이벤트 객체</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript11.html">데이터 효과</a></li>
+                    <li><a href="javascript12.html">퀴즈 효과</a></li>
+                    <li><a href="javascript13.html">마우스 효과</a></li>
+                    <li><a href="javascript14.html">슬라이드 효과</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+
+        <main id="main">
+            <div class="main__menu">
+                <ul>
+                    <li><a href="#sample01">01. 변수 : 데이터 저장</a></li>
+                    <li><a href="#sample02">02. 변수 : 데이터 저장 + 데이터 변경</a></li>
+                    <li><a href="#sample03">03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</a></li>
+                    <li><a href="#sample04">04. 상수 : 데이터 저장 + 데이터 변경(x)</a></li>
+                    <li><a href="#sample05">05. 배열 : 데이터 저장(여러개) - 표현방법1 (배열선언)</a></li>
+                    <li><a href="#sample06">06. 배열 : 데이터 저장(여러개) - 표현방법2 (배열선언과 동시에 초기값 설정)</a></li>
+                    <li><a href="#sample07">07. 배열 : 데이터 저장(여러개) - 표현방법3 (리터럴 방식으로 배열 선언)</a></li>
+                    <li><a href="#sample08">08. 배열 : 데이터 저장(여러개) - 표현방법4 (리터럴 방식으로 배열 선언과 동시에 초기값 설정)</a></li>     
+                    <li><a href="#sample09">09. 배열 : 데이터 저장(여러개) - 표현방법5 (2차 배열)</a></li>
+                    <li><a href="#sample10">10. 배열 : 데이터 저장(여러개) - 표현방법6 (배열 구조 분해 할당)</a></li>
+                    <li><a href="#sample11">11. 배열 : 데이터 저장(여러개) - 표현방법7 (배열 펼침연산자)</a></li>
+                    <li><a href="#sample12">12. 객체 : 데이터 저장(키와 값) - 표현방법1 (객체선언 후 배열방식으로 데이터 입력)</a></li>
+                    <li><a href="#sample13">13. 객체 : 데이터 저장(키와 값) - 표현방법2 (객체선언 후 객체방식으로 데이터 입력)</a></li>
+                    <li><a href="#sample14">14. 객체 : 데이터 저장(키와 값) - 표현방법3 (리터럴 방식으로 객체 선언)</a></li>
+                    <li><a href="#sample15">15. 객체 : 데이터 저장(키와 값) - 표현방법4 (리터럴 방식으로 객체 선언과 동시에 초기값 설정)</a></li>
+                    <li><a href="#sample16">16. 객체 : 데이터 저장(키와 값) - 표현방법5 (배열 + 객체)</a></li>
+                    <li><a href="#sample17">17. 객체 : 데이터 저장(키와 값) - 표현방법6 (객체 + 배열)</a></li>
+                    <li><a href="#sample18">18. 객체 : 데이터 저장(키와 값) - 표현방법7 (객체 + 객체)</a></li>
+                    <li><a href="#sample19">19. 객체 : 데이터 저장(키와 값) - 표현방법8 (객체 + 함수)</a></li>
+                    <li><a href="#sample20">20. 객체 : 데이터 저장(키와 값) - 표현방법9 (객체 구조 분해 할당)</a></li>
+                    <li><a href="#sample21">21. 객체 : 데이터 저장(키와 값) - 표현방법10 (객체 펼침연산자)</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#sample100">전역변수 / 지역변수</a></li>
+                    <li><a href="#sample50">+ 연산자</a></li>
+                    <li><a href="#sample51">- 연산자</a></li>
+                    <li><a href="#sample52">* 연산자</a></li>
+                    <li><a href="#sample53">/ 연산자</a></li>
+                    <li><a href="#sample54">% 연산자</a></li>
+                    <li><a href="#sample55">== 연산자와 === 연산자</a></li>
+                    <li><a href="#sample56">!= 연산자와 !== 연산자</a></li>
+                    <li><a href="#sample57">대소 비교 연산자</a></li>
+                    <li><a href="#sample58">&& 연산자</a></li>
+                    <li><a href="#sample59">|| 연산자</a></li>
+                    <li><a href="#sample60">자료형</a></li>
+                    
+                </ul>
+            </div>
+            <!-- //main__menu -->
+            <div class="main__sample">
+                <div id="sample01" class="sample">
+                    <h3>01. 변수 : 데이터 저장소</h3>
+                    <p>JavaScript 변수는 데이터를 저장하는 저장소이다.</p>
+<pre><code class="language-js">{
+    var x = 100;                // 변수 x에 숫자 100을 저장
+    let y = 200;                // 변수 y에 숫자 200을 저장
+    const z = "javascript";       // 변수 z에 문자 javascript를 저장
+
+    var x = 200;
+    let y = 300;        // 오류 발생
+    console.log(x);
+    console.log(y);
+    console.log(z);
+}
+</code></pre>
+                    <p class="desc">var는 예전 방식의 변수 선언 방법이다. <br>
+                    let 최근 많이 사용하는 방식으로 var와 다른점은 var는 재할당시 오류가 발생하지 않지만 let은 재할당하면 오류가 발생한다. <br>
+                const는 상수로 변경이 불가능하다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample01 -->
+
+                <div id="sample02" class="sample">
+                    <h3>02. 변수 : 데이터 저장소 + 데이터 변경</h3>
+                    <p></p>
+<pre><code class="language-js">{
+    let x = 100;             // 변수 x에 숫자 100을 저장
+    let y = 200;             // 변수 y에 숫자 200을 저장
+    let z = "javascript";    //변수 z에 문자 javascript를 저장
+
+    x = 300;                // 변수 x에 값을 숫자 300으로 변경
+    y = 400;                // 변수 y에 값을 숫자 400으로 변경
+    z = "jquery";           // 변수 z에 값을 문자 jquery로 변경
+
+    console.log(x);
+    console.log(y);
+    console.log(z);
+}
+</code></pre>
+                    <p class="desc">변수를 변경할때는 var나 let을 앞에 붙이지 않고 변수 이름만 입력하여 변경한다. <br>
+                        let의 경우 재할당 시 let을 붙이면 오류가 발생하지만 var는 재할당시 var를 또 붙여도 오류가 발생하지 않는다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                300<br>
+                                400<br>
+                                jquery
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample02 -->
+
+                <div id="sample03" class="sample">
+                    <h3>03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</h3>
+                    <p></p>
+<pre><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x += 100;       // x = x + 100;
+    y += 100;       // y = y + 100;
+    z += "jquery";  // z = z + "jquery";
+
+    console.log(x);
+    console.log(y);
+    console.log(z);
+}    
+</code></pre>
+                    <p class="desc">변수에 값을 더하려면 해당 변수의 값을 가져와서 새로운 값을 더한 후 다시 변수에 할당하면 된다. <br>
+                        만약 데이터 값이 숫자라면 계산이 되지만, 데이터 값이 문자라면 그냥 그대로 합쳐진다. 이는 문자열 + 숫자에도 적용된다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                200<br>
+                                300<br>
+                                javascriptjquery
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample03 -->
+
+                <div id="sample04" class="sample">
+                    <h3>04. 상수 : 데이터 저장 + 데이터 변경(X)</h3>
+                    <p>상수는 데이터 저장이 가능하나 변경은 불가능하다.</p>
+<pre><code class="language-js">{
+    const x = 100;
+    const y = 200;
+    const z = "javascript";
+
+    x = 200;    // TypeError: Assignment to constant variable. 오류 발생
+
+    console.log(x);
+    console.log(y);
+    console.log(z);
+}    
+</code></pre>
+                    <p class="desc">상수는 주로 프로그램에서 변하지 않아야 하는 값이나 설정, 상태 등을 나타내는데 const를 사용한다.
+                        만약 변경하려고 하면 TypeError: Assignment to constant variable. 오류가 발생한다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>                
+                <!-- //sample04 -->
+
+                <div id="sample05" class="sample">
+                    <h3>05. 배열 : 데이터 저장(여러개) - 표현방식1 (배열 선언)</h3>
+                    <p>배열은 여러개의 데이터를 하나의 변수에 저장할 수 있다.</p>
+<pre><code class="language-js">{
+    const arr = new Array();
+    arr[0] = 100;
+    arr[1] = 200;
+    arr[2] = "javascript";
+
+    console.log(arr);
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr[2]);
+    console.log(arr[3]);
+}
+</code></pre>
+                    <p class="desc">배열은 하나의 변수에 여러 값을 저장하고, 각 값은 배열 내에서 인덱스(index)라고 불리는 위치를 가지고 접근할 수 있다.
+                        인덱스는 0부터 시작되며, 만약 배열의 개수보다 더 큰 숫자를 입력하면 undefined가 출력된다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100, 200, javascript<br>
+                                100<br>
+                                200<br>
+                                javascript<br>
+                                undefined
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample05 -->
+
+                <div id="sample06" class="sample">
+                    <h3>06. 배열 : 데이터 저장(여러개) - 표현방식2</h3>
+                    <p>배열선언과 동시에 초기값 설정</p>
+<pre><code class="language-js">{
+    const arr = new Array(100, 200, "javascript");
+
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr[2]);
+}
+</code></pre>
+                    <p class="desc">이 방식은 위에 방식에서 간편화 된 것으로 선언과 동시에 할당하여 
+                        인덱스를 하나하나 입력하지않고 한번에 입력하여 조금 더 적은 코드를 입력할 수 있다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript<br>
+                            </div>
+                        </details>
+                    </div>                    
+                </div>
+                <!-- //sample06 -->
+
+                <div id="sample07" class="sample">
+                    <h3>07. 배열 : 데이터 저장(여러개) - 표현방식3</h3>
+                    <p>리터럴 방식으로 배열 선언</p>
+<pre><code class="language-js">{
+    const arr = [];
+
+    arr[0] = 100;
+    arr[1] = 200;
+    arr[2] = "javascript";
+
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr[2]);
+}
+</code></pre>
+                    <p class="desc">이 코드는 배열을 직접 생성하고 각 요소에 값을 할당하는 것으로 new Array 대신 리터럴 방식으로 배열을 선언하여 조금 더 간편해 졌다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript<br>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample07 -->
+
+                <div id="sample8" class="sample">
+                    <h3>08. 배열 : 데이터 저장(여러개) - 표현방식4</h3>
+                    <p>리터럴 방식으로 배열 선언과 동시에 초기값 설정</p>
+<pre><code class="language-js">{
+    const arr = [100, 200, "javascript"];
+
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr[2]);
+}
+</code></pre>
+                    <p class="desc">배열 arr은 배열을 생성함과 동시에 값을 할당하는 것으로 가장 간소화된 것이다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100 <br>
+                                200 <br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>                    
+                </div>
+                <!-- //sample08 -->
+
+                <div id="sample9" class="sample">
+                    <h3>09. 배열 : 데이터 저장(여러개) - 표현방법5 (2차 배열)</h3>
+                    <p>배열안에 배열을 넣어 다중구조로 만들 수 있다.</p>
+<pre><code class="language-js">{
+    const arr = [100, [200, 300], ["javascript", "jquery"]];
+
+    console.log(arr[0]);
+    console.log(arr[1][0]);
+    console.log(arr[1][1]);
+    console.log(arr[2][0]);
+    console.log(arr[2][1]);
+}
+</code></pre>
+                    <p class="desc">
+                        arr[0]은 1차 배열로 되어있지만, <br>
+                        arr[1]과 arr[2]는 2차 배열로 이루어져 있는데, <br>
+                        이들을 호출할 때에는 뒤에 배열의 인덱스를 하나 더 붙여 호출할 수 있다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100 <br>
+                                200 <br>
+                                300 <br>
+                                javascript <br>
+                                jquery
+                            </div>
+                        </details>
+                    </div>                    
+                </div>
+                <!-- //sample09 -->
+
+                <div id="sample10" class="sample">
+                    <h3>10. 배열 : 데이터 저장(여러개) - 표현방법6 (배열 구조 분해 할당)</h3>
+                    <p>배열 구조 분해 할당</p>
+<pre><code class="language-js">{
+    const arr = [100, 200, "javascript"];
+
+    const [a, b, c] = arr;
+
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+</code></pre>
+                    <p class="desc">
+                        배열 구조 분해 할당을 하게되면 배열이 복잡해지면 호출할 때도 이름이 길어지는데 이를 간단하게 만들어 줄 수 있다. <br>
+                        const arr = [100, 200, "javascript"];을 그냥 호출 하려면 <br>
+                        console.log(arr[0]); 이렇게 배열의 이름과 위치를 적어야 하는데 <br>
+                        const [a, b, c] = arr; 배열 구조 분해 할당을 해주면 <br>
+                        console.log(a); 이렇게 간편해 진다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript<br>
+                            </div>
+                        </details>
+                    </div>                    
+                </div>
+                <!-- //sample10 -->
+
+                <div id="sample11" class="sample">
+                    <h3>11. 배열 : 데이터 저장(여러개) - 표현방법7</h3>
+                    <p>배열 펼침 연산자</p>
+<pre><code class="language-js">{
+    const arr1 = [100, 200, "javascript"];
+    const arr2 = [300, 400, "jquery"];
+    const arr3 = [...arr1, 500];
+
+    console.log(arr1);   
+    console.log(...arr1); 
+    console.log(...arr1, ...arr2);
+    console.log(...arr3);     
+}
+</code></pre>
+                    <p class="desc">
+                        배열을 펼쳐서 개별 요소로 추출하거나 여러 배열을 병합하는 데에 활용된다. <br>
+                        arr1을 호출하면 100, 200, javascript 이렇게 쉼표(,)가 있는 채로 호출이 되는데, <br>
+                        배열 펼침 연산자(...)를 사용하면 쉼표가 사라지고 <br>
+                        const arr3 = [...arr1, 500]; 이렇게 배열끼리의 병합도 가능해 진다. 
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100, 200, javascript<br>
+                                100 200 javascript<br>
+                                100 200 javascript 300 400 jquery<br>
+                                100 200 javascript 500
+                            </div>
+                        </details>
+                    </div>                        
+                </div>
+                <!-- //sample11 -->
+
+                <div id="sample12" class="sample">
+                    <h3>12. 객체 : 데이터 저장(키와 값) - 표현방법1</h3>
+                    <p>객체선언 후 배열방식으로 데이터 입력</p>
+<pre><code class="language-js">{
+    const obj = new Object();
+
+    obj[0] = 100;
+    obj[1] = 200;
+    obj[2] = "javascript"
+
+    console.log(obj[0]);
+    console.log(obj[1]);
+    console.log(obj[2]);
+}
+</code></pre>                    
+                    <p class="desc">
+                        객체를 생성할 때 const obj = new Object(); 이렇게 new Object()를 붙여서 선언할 시 <br>
+                        배열방식으로도 객체를 생성할 수 있다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript<br>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample12 -->
+
+                <div id="sample13" class="sample">
+                    <h3>13. 객체 : 데이터 저장(키와 값) - 표현방법2</h3>
+                    <p>객체선언 후 객체방식으로 데이터 입력</p>
+<pre><code class="language-js">{
+    const obj = new Object();
+
+    obj.a = 100;
+    obj.b = 200;
+    obj.c = "javascript";
+
+    console.log(obj.a);
+    console.log(obj.b);
+    console.log(obj.c);
+}
+</code></pre>
+                    <p class="desc">
+                        const obj = new Object();으로 객체를 선언했지만 12번과 다른 점은 <br>
+                        값을 입력할 때 객체방식으로 준 것이다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript<br>
+                            </div>
+                        </details>
+                    </div>                    
+                </div>
+                <!-- //sample13 -->
+
+                <div id="sample14" class="sample">
+                    <h3>14. 객체 : 데이터 저장(키와 값) - 표현방법3 </h3>
+                    <p>리터럴 방식으로 객체 선언</p>
+<pre><code class="language-js">{
+    const obj = {};
+            
+    obj.a = 100;
+    obj.b = 200;
+    obj.c = "javascript";
+
+    console.log(obj.a);
+    console.log(obj.b);
+    console.log(obj.c);
+}
+</code></pre>
+                    <p class="desc">
+                        객체를 선언할 때 new Object();대신에 리터럴 방식으로 선언한 것이다. <br>
+                        이때는 new Object();가 없으므로 배열방식으로 값을 주는 것이 불가능하다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100 <br>
+                                200 <br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample14 -->
+
+                <div id="sample15" class="sample">
+                    <h3>15. 객체 : 데이터 저장(키와 값) - 표현방법4 </h3>
+                    <p>리터럴 방식으로 객체 선언과 동시에 초기값 설정</p>
+<pre><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript"
+    }
+
+    console.log(obj.a);
+    console.log(obj.b);
+    console.log(obj.c);
+}
+</code></pre>
+                    <p class="desc">
+                        객체를 리터럴방식으로 선언하고 동시에 초기값을 준 것이다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100 <br>
+                                200 <br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample15 -->
+
+                <div id="sample16" class="sample">
+                    <h3>16. 객체 : 데이터 저장(키와 값) - 표현방법5</h3>
+                    <p>배열 안에 객체를 선언했을 때</p>
+<pre><code class="language-js">{
+    const obj = [
+        {
+            a: 100,
+            b: 200,
+            c: "javascript"
+        },
+    ]
+
+    console.log(obj[0].a);
+    console.log(obj[0].b);
+    console.log(obj[0].c);
+}
+</code></pre>
+                    <p class="desc">
+                        배열 안에서 객체를 선언한 것으로 <br>
+                        obj[0].a을 하나씩 살펴보면 obj객체 [0]번째 인덱스에 a라는 키를 가진 값 100이 있다는 것을 알 수 있다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100 <br>
+                                200 <br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample16 -->
+
+                <div id="sample17" class="sample">
+                    <h3>17. 객체 : 데이터 저장(키와 값) - 표현방법6</h3>
+                    <p>객체 안에 배열을 선언 할 때</p>
+<pre><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: [200, 300],
+        c: "javascript",
+    }
+
+    console.log(obj.a);
+    console.log(obj.b[0]);
+    console.log(obj.b[1]);
+    console.log(obj.c);
+}
+</code></pre>
+                    <p class="desc">
+                        객체 obj.b의 경우 값에 배열이 있는 것을 볼 수 있다. <br>
+                        이때는 배열안에 객체가 선언되었을 때와는 반대로 객체의 키를 입력해 준 뒤에 배열의 인덱스를 입력해 주면 된다. <br>
+                        obj.b[0]
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100 <br>
+                                200 <br>
+                                300 <br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>                    
+                </div>
+                <!-- //sample17 -->
+
+                <div id="sample18" class="sample">
+                    <h3>18. 객체 : 데이터 저장(키와 값) - 표현방법7</h3>
+                    <p>객체 안에 객체를 선언 할 때</p>
+<pre><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: {x: 200, y: 300},
+        c: "javascript",
+    }
+
+    console.log(obj.a);
+    console.log(obj.b.x);
+    console.log(obj.b.y);
+    console.log(obj.c);
+}
+</code></pre>
+                    <p class="desc">
+                        객체 obj.b를 보면 다시 객체가 선언되어 있는 것을 볼 수 있다. <br>
+                        이때는 원하는 값이 있는 키의 값을 밖에서부터 차례로 들어가면 된다. <br>
+                        obj.b.x
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100 <br>
+                                200 <br>
+                                300 <br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>                    
+                </div>
+                <!-- //sample18 -->
+
+                <div id="sample19" class="sample">
+                    <h3>19. 객체 : 데이터 저장(키와 값) - 표현방법8 (객체 + 함수)</h3>
+                    <p>객체 안에 함수를 넣었을 때</p>
+<pre><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: [200, 300],
+        c: {x: 400, y: 500},
+        d: "javascript",
+        e: function(){
+            console.log("javascript");
+        },
+        f: function(){
+            console.log(obj.d);
+        },
+        g: function(){
+            console.log(this.d);
+        }
+    }
+
+    console.log(obj.a);
+    console.log(obj.b[0]);
+    console.log(obj.b[1]);
+    console.log(obj.c.x);
+    console.log(obj.c.y);
+    console.log(obj.d)
+    obj.e();
+    obj.f();
+    obj.g();
+}
+</code></pre>
+                    <p class="desc">
+                        obj.e를 보면 값으로 함수가 들어있는 것을 볼 수 있다. <br>
+                        이 함수를 호출하려면 obj.e가 아닌 함수를 호출할 때 처럼 obj.e()이렇게 호출해야 함수가 실행되면 호출이 된다. <br>
+                        만약 obj.e 이렇게 괄호가 없이 호출하면 함수가 실행되지 않고 함수의 모습 그 자체가 나오게 된다. <br>
+                        또한 obj.f와 obj.g의 차이를 보면 객체의 호출명이 다른데 <br>
+                        같은 객체의 값을 사용할 때 객체의 이름대신 this를 사용할 수 있다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100 <br>
+                                200 <br>
+                                300 <br>
+                                400 <br>
+                                500 <br>
+                                javascript <br>
+                                javascript <br>
+                                javascript <br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>                    
+                </div>
+                <!-- //sample19 -->
+
+                <div id="sample20" class="sample">
+                    <h3>20. 객체 : 데이터 저장(키와 값) - 표현방법9</h3>
+                    <p> 객체 구조 분해 할당</p>
+<pre><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: {x: 200, y: 300},
+        c: "javascript"
+    }
+
+    const { a, b: {x, y}, c} = obj;
+
+    console.log(a);
+    console.log(x);
+    console.log(y);
+    console.log(c);
+}
+</code></pre>
+                    <p class="desc">
+                        객체 구조 분해 할당은 객체의 속성을 추출하여 변수에 할당하는 방법이다. <br> 
+                        이를 통해 객체의 속성을 간편하게 변수로 추출하거나 활용할 수 있습니다. <br>
+                        만약 객체 구조 분해 할당을 하지 않았다면 obj.b.x 이렇게 호출해야하지만 <br>
+                        객체 구조 분해 할당통하여 x 이렇게 간단하게 호출이 가능하다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100 <br>
+                                200 <br>
+                                300 <br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>                    
+                </div>
+                <!-- //sample20 -->
+
+                <div id="sample21" class="sample">
+                    <h3>21. 객체 : 데이터 저장(키와 값) - 표현방법10</h3>
+                    <p>객체 펼침 연산자</p>
+<pre><code class="language-js">{
+    const obj1 = { a: 100, b: 200, c: "javascript"};
+    const obj2 = { ...obj1, d: "jquery"};
+    const obj3 = { ...obj1, ...obj2};
+
+    console.log(obj1);
+    console.log(obj2);
+    console.log(obj2.a);
+    console.log(obj2.b);
+    console.log(obj2.c);
+    console.log(obj2.d);
+    console.log(obj3);
+}
+</code></pre>
+                    <p class="desc">
+                        객체 펼침 연산자는 객체의 속성을 새로운 객체로 복사하거나, 객체를 병합할 때 사용되는 문법이다. <br>
+                        객체 펼침 연산자는 ...을 사용하는데, 만약 obj1을 호출하면 100, 200, javascript 이렇게 쉼표(,)가 있는채로 호출이 되지만 <br>
+                        ...obj1 이렇게 호출하면 100 200 javascript로 호출이 된다. 이는 병합할 때도 적용된다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100 <br>
+                                200 <br>
+                                300 <br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>                    
+                </div>
+                <!-- //sample21 -->
+
+                <div id="sample100" class="sample">
+                    <h3>전역변수 / 지역변수</h3>
+                    <p></p>
+<pre><code class="language-js">{
+    let x = 100;        //전역변수
+    let y = 200;
+    let z = "javascript";
+
+    console.log("함수 밖1: "+ x, y, z);
+
+    function func(){
+        let x = 300;        // 지역변수
+        y += 400;            // 전역변수 y값에 400을 추가
+        z = "jquery";   // 전역변수 z값을 jquery로 변경
+
+        console.log("함수 안: " + x, y, z);
+    };
+    func();
+
+    console.log("함수 밖2: "+ x, y, z);
+}    
+</code></pre>
+                    <p class="desc">
+                        전역변수 : 함수 밖에서 선언된 변수 <br>
+                        지역변수 : 함수 안에서 선언된 변수 <br>
+                        func()안의 선언된 변수를 자세히 보면 조금씩 다르다. <br>
+                        let x는 지역변수로 함수 밖에선 영향을 끼치지 않지만, <br>
+                        y += 400은 전역변수 y에 400의 값을 추가하는 것이고, <br>
+                        z = "jquery"는 지역변수이지만 전역변수를 재할당하는 것이 되었다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                함수 밖1: 100, 200, 'javascript' <br>
+                                함수 안: 300, 600,'jquery' <br>
+                                함수 밖2: 100, 600, 'jquery'
+                            </div>
+                        </details>
+                    </div>
+                </div>                
+                <!-- //sample100 -->
+
+                <div id="sample50" class="sample">
+                    <h3>+ 연산자</h3>
+                    <p>기능 : 덧셈, 문자열 결합, 문자열과 숫자결합</p>
+<pre><code class="language-js">{
+    const sum = 5+ 3;
+    console.log(sum);
+
+
+    const firstName = "John";
+    const lastName = "Doe";
+    const fullName = firstName + " " + lastName;
+    console.log(fullName);
+
+    const num = 42;
+    const text = "The answer is: " + num;
+    console.log(text;)
+}
+</code></pre>
+
+                    <div class="table">
+                        <table>
+                            <caption>산술 연산자의 종류와 기본형</caption>
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>기본형</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>+</td>
+                                    <td>A+B</td>
+                                    <td>더하기</td>
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>A-B</td>
+                                    <td>빼기</td>
+                                </tr>
+                                <tr>
+                                    <td>*</td>
+                                    <td>A*B</td>
+                                    <td>곱하기</td>
+                                </tr>
+                                <tr>
+                                    <td>/</td>
+                                    <td>A/B</td>
+                                    <td>나누기</td>
+                                </tr>
+                                <tr>
+                                    <td>%</td>
+                                    <td> A%B</td>
+                                    <td>나머지</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <p class="desc">+ 연산자는 여러 기능이 있는데 크게 보면 숫자의 덧셈, 문자열의 결합, 문자열과 숫자의 결합이 있다. <br> sum의 경우 덧셈의 기능을 한것이고, <br> fullName에서의 경우 firstName과 lastName 그리고 그 사의의 " " 공백까지도 결합한 것을 보여준다. <br> text에서는 문자와 숫자를 결합한 것을 보여주는데 만약 결합하는 것 중 하나라도 문자열이 있다면 결합시 숫자 또한 데이터값이 문자로 취급된다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                8 <br>
+                                John Doe <br>
+                                The answer is: 42
+                            </div>
+                        </details>
+                    </div>                    
+                </div>
+                <!-- //sample50 -->
+
+                <div id="sample51" class="sample">
+                    <h3>- 연산자</h3>
+                    <p>기능 : 뺄셈, 부호 반전</p>
+<pre><code class="language-js">{
+    const difference = 10 - 5;
+    console.log(difference);
+
+    const positiveNumber = 42;
+    const negativeNumber = -positiveNumber;
+    console.log(negativeNumber);
+}
+</code></pre>
+                    <p class="desc">-연산자의 경우 주로 뺄셈을 할 때 사용되지만 부호를 바꾸는데 사용되기도 한다. <br>
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                5 <br>
+                                -42
+                            </div>
+                        </details>
+                    </div>                        
+                </div>
+                <!-- //sample51 -->
+
+                <div id="sample52" class="sample">
+                    <h3>* 연산자</h3>
+                    <p>기능 : 곱셈, 문자열 복제, 배열 초기화, 데이터 구조 확장</p>
+<pre><code class="language-js">{
+    const product = 5 * 3;
+    console.log(product);
+
+    const repeatedText = "abc" * 3;
+    console.log(repeatedText);
+
+    const array = [0] * 5;
+    console.log(array);
+}
+</code></pre>
+                    <p class="desc">*연산자는 주로 곱셈에 사용되지만, 복제를 할 때도 사용된다. <br>
+                        const product = 5 * 3; ----숫자와 숫자 사이에 위치할 땐 곱셈으로 사용되고, <br>
+                        const repeatedText = "abc" * 3;---- 문자 옆에 위치하면 복제의 역할을 한다. <br>
+                        const array = [0] * 5;----배열을 특정 값으로 초기화할 때 사용되기도 한다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                15 <br>
+                                abcabcabc <br>
+                                [0, 0, 0, 0, 0]
+                            </div>
+                        </details>
+                    </div>                         
+                </div>
+                <!-- //sample52 -->
+
+                <div id="sample53" class="sample">
+                    <h3> / 연산자</h3>
+                    <p>기능 : 나눗셈</p>
+<pre><code class="language-js">{
+    const result = 10 / 2;
+    console.log(result);
+
+    const result1 = "10" / 2;
+    const result2 = "hello" / 2;
+    console.log(result1);
+    console.log(result2);
+}
+</code></pre>
+                    <p class="desc">/ 연산자는 주로 나눗셈을 계산할 때 사용된다. <br>
+                        const result = 10 / 2;----대표적인 모습 <br>
+                        const result1 = "10" / 2;----result와 다른 점은 데이터값이 숫자가 아닌 문자라는 점이다. <br>
+                    하지만 이때도 /연산자를 사용하면 숫자로 변환하여 계산해 준다. <br>
+                    const result2 = "hello" / 2;----하지만 이렇게 숫자로 변환하는게 불가능한 데이터는 다른 결과가 나온다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                5 <br>
+                                5 <br>
+                                NaN
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample53 -->
+
+                <div id="sample54" class="sample">
+                    <h3>% 연산자</h3>
+                    <p>기능 : 나머지 계산</p>
+<pre><code class="language-js">{
+    const remainder = 10 % 3;
+    console.log(remainder);
+
+    const isEven = 10 % 2 === 0;
+    const isOdd = 7 % 2 === 1;
+    console.log(isEven);
+    console.log(isOdd);
+
+    const remainder = 7.5 % 2;
+    console.log(remainder);
+}
+</code></pre>
+                    <p class="desc">% 연산자는 나머지 계산을 하는 연산자로 결과값으로 여러가지 기능을 구현할 수 있다. <br> const remainder = 10 % 3;----가장 기본적인 기능 <br>
+                        const isEven = 10 % 2 === 0;----2로 나눈 나머지가 0인 것을 보고 짝수임을 알 수 있다. <br>
+                        const isOdd = 7 % 2 === 1;----2로 나눈 나머지가 1인 것을 보고 홀수임을 알 수 있다. <br>
+                        const remainder = 7.5 % 2;----한계가 있다면 정수형 숫자에만 가능하고 부동소수점 숫자에는 사용이 불가하다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                1 <br>
+                                true <br>
+                                true <br>
+                                NaN
+                            </div>
+                        </details>
+                    </div>       
+                </div>
+                <!-- //sample54 -->
+
+                <div id="sample55" class="sample">
+                    <h3>== 연산자와 ===연산자</h3>
+                    <p>기능 : 값이 같은지 비교</p>
+<pre><code class="language-js">{
+    const x = 1;
+    const y = "1";
+
+    console.log(x == y);
+    console.log(x === y);
+}
+</code></pre>
+                    <p class="desc">
+                        값이 같은지를 비교할 땐 == 또는 ===을 사용한다 <br>
+                        ==의 경우 자료형 반환 후 비교하여 x == y를 했을 때 true가 출력된다. <br>
+                        ===의 경우 값과 자료형이 모두 같아야 true를 반환하는데 x는 숫자이고 y는 문자열이므로 자료형이 달라 false를 출력한다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                true <br>
+                                false
+                            </div>
+                        </details>
+                    </div>       
+                </div>
+                <!-- //sample55 -->
+
+                <div id="sample56" class="sample">
+                    <h3>!= 연산자와 !==연산자</h3>
+                    <p>기능 : 값이 다른지 비교</p>
+<pre><code class="language-js">{
+    const x = 1;
+    const y = "1";
+
+    console.log(x != y);
+    console.log(x !== y);
+}
+</code></pre>
+                    <p class="desc">
+                        값이 다른지를 비교할 땐 != 또는 !==을 사용한다 <br>
+                        !=의 경우 자료형 반환 후 비교하여 x != y를 했을 때 값이 같으므로 flase가 출력된다. <br>
+                        !==의 경우 값과 자료형이 모두 달라야 true를 반환하는데 x는 숫자 y는 문자열로 값은 같지만 자료형이 다르므로 true가 출력된다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                false <br>
+                                true
+                            </div>
+                        </details>
+                    </div>       
+                </div>
+                <!-- //sample56 -->
+
+                <div id="sample57" class="sample">
+                    <h3>대소 비교 연산자</h3>
+                    <p>기능 : 두 값의 대소를 비교</p>
+<pre><code class="language-js">{
+    const x = 1;
+    const y = 2;
+    const z = 2;
+
+    console.log(x > y);
+    console.log(x >= y);
+    console.log(y >= z);
+    console.log(x < y);
+    console.log(x <= y);
+    console.log(y <= z);  
+}
+</code></pre>
+                    <p class="desc">
+                        x > y 은 y가 x보다 미만인지 물어보는 연산자이다. <br>
+                        x >= y 은 y가 x보다 이하인지 묻는 것으로 false가 출력되지만 <br>
+                        y >= z 은 둘의 값이 같으므로 true가 출력된다.
+                        x < y 은 y가 x를 초과하는지 묻는 연산자이다. <br>
+                        x <= y 은 y가 x 이상인지 묻는 연산자이며 <br>
+                        y <= z 은 둘의 값이 같으므로 true가 출력된다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                false <br>
+                                false <br>
+                                true <br>
+                                true <br>
+                                true <br>
+                                true <br>
+                            </div>
+                        </details>
+                    </div>       
+                </div>
+                <!-- //sample57 -->
+
+                <div id="sample58" class="sample">
+                    <h3>&& 연산자</h3>
+                    <p>기능 : and</p>
+<pre><code class="language-js">{
+    const age = 25;
+    const license = true;
+    
+    const canDrive = age >= 18 && license;
+    
+    console.log(canDrive);      
+}
+</code></pre>
+                    <p class="desc">
+                        &&연산자는 and로 해석이 되며 조건들이 모두 true일 때 true를 반환한다. <br>
+                        age >= 18 && license를 뜯어보면 age는 18이상이고 license가 어떤것인지 묻고 있는데 <br>
+                        &&연산자가 중간에 있으므로 둘다 true여야 canDrive를 호출했을 때 true가 나온다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                true
+                            </div>
+                        </details>
+                    </div>       
+                </div>
+                <!-- //sample58 -->
+
+                <div id="sample59" class="sample">
+                    <h3>|| 연산자</h3>
+                    <p>기능 : or</p>
+<pre><code class="language-js">{
+    const student = true;
+    const employee = false;
+    
+    const isAtSchoolOrWork = student || employee;
+    
+    console.log(isAtSchoolOrWork);
+        
+}
+</code></pre>
+                    <p class="desc">
+                        || 연산자는 or로 해석이 되며 조건들 중 하나만 true여도 true를 반환한다. <br>
+                        isAtSchoolOrWork = student || employee;를 보면 student 또는 employee인지 묻는 것인데<br>
+                        student는 true이고 employee는 false이다. <br>
+                        하지만 || 연산자는 하나만 true여도 되므로 isAtSchoolOrWork을 호출하면 true가 나온다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                true
+                            </div>
+                        </details>
+                    </div>       
+                </div>
+                <!-- //sample59 -->
+
+                <div id="sample60" class="sample">
+                    <h3>자료형</h3>
+                    <p>숫자, 문자열, 논리형, 배열, 객체, 함수, null, undefined</p>
+<pre><code class="language-js">{
+    const a = 100;
+    console.log(a);
+
+    const b = "string";
+    console.log(b);
+
+    const c = true;
+    const d = false;
+    console.log(c);
+    console.log(d);
+
+    const arr = [1, 2, 3, 4];
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr[2]);
+    console.log(arr[3]);
+
+    const obj = {x: 100, y: 200};
+    console.log(obj.x);
+    console.log(obj.y);
+
+    function func(){
+        console.log("함수");
+    }
+    func();
+
+    const empty = null;
+    console.log(empty);
+
+    let x;
+    console.log(x);
+}
+</code></pre>
+                    <p class="desc">
+                        자료형에는 숫자, 문자열, 논리형, 배열, 객체, 함수, null, undefined등이 있다. <br>
+                        const a = 100; 처럼 숫자가 들어있는 경우 자료형은 숫자이고, <br>
+                        const b = "string"; 처럼 문자가 들어있는 경우 자료형은 문자열 이며, <br>
+                        true 혹은 false로 출력이 되는 것을 논리형이라 한다. <br>
+                        const arr = [1, 2, 3, 4];처럼 []로 묶인 것은 배열 <br>
+                        const obj = {x: 100, y: 200}; 처럼 {}로 묶인 것은 객체 <br>
+                        함수의 형태는 다양한데 func()의 모습이 그 중 하나이다. <br>
+                        null은 값이 없음을 나타내는 값인데, 변수에 명시적으로 값을 할당하여 비어있다는 것을 나타내기 위해 사용한다. <br>
+                        undefined는 값이 정의되지 않음을 나타내는 자료형이다. 변수가 선언되었지만 값이 설정되지 않았을때 나타난다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100 <br>
+                                string <br>
+                                true <br>
+                                false <br>
+                                1, 2, 3, 4 <br>
+                                100 <br>
+                                200 <br>
+                                함수 <br>
+                                null <br>
+                                undefined
+                            </div>
+                        </details>
+                    </div>       
+                </div>
+                <!-- //sample60 -->
+
+            </div>
+            <!-- //main__sample -->
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:chfhrdk@gmail.com">chfhrdk@gmail.com</a>
+        </footer>
+        <!-- //footer -->
+    </div>
+
+    <!-- script -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    
+    <script>
+        
+
+    </script>
+</body>
+</html>
