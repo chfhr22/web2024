@@ -4,39 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <style>
-        table {
-            width: 100%;
-            border-top: 1px solid #ccc;
-            border-spacing: 0;
-        }
-        table td {
-            border-bottom: 1px solid #ccc;
-        }
-    </style>
 </head>
 <body>
     <script>
-        // 50칸 테이블(1~50)
-        {
-            let table = "<table class='table'>";
-            num = 2;
+        const aaa = [10,20,30,40,50,60,70,80,90];
 
-            for(let i=1; i<=10; i++){
-                table += "<tr>";
-                for(let j=1; j<=5; j++){
-                    table += "<td>"+num+"</td>";
-                    num += 2;
-                }
-                table += "<tr>";
-            }
+        let sum = 0;
+        // for (let i=0; i<aaa.length; i++){
+        //     sum += aaa[i];
+        // }
+        // console.log(sum);
 
-            table += "</table>"
+        // aaa.forEach((el) => {
+        //     sum += el;
+        // })
+        // console.log(sum);
 
-            document.write(table);
-        }
+        // for(el in aaa){
+        //     sum += aaa[el];
+        // }
+        // console.log(sum);
 
-    </script> 
+        // for(el of aaa){
+        //     sum += el;
+        // }
+        // console.log(sum);
+
+        // aaa.map((el) => {
+        //     sum += el;       
+        // })
+        // console.log(sum);
+
+        aaa.filter((el) => {
+            sum += el;
+        })
+        console.log(sum);
+    </script>
 </body>
 </html>
