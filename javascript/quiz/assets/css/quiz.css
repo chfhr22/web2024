@@ -100,7 +100,7 @@ body::after {
     align-items: center;
     justify-content: space-between;
 }
-#header h1 {
+#header h1 a {
     display: inline-block;
     color: #fff;
     padding: 20px;
