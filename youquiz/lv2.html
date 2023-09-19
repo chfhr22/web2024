@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트01</title>
+
+    <link rel="stylesheet" href="assets/css/quiz.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html"><img src="assets/img/logo.png" alt=""></a>
+        </h1>
+
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <img src="assets/img/lv2/lv2-1.jpg" alt="" >
+                <div class="quiz__header">
+                </div>
+                <div class="quiz__main">
+                    <div class="quiz__input">
+                        <input type="text" placeholder="정답을 입력해주세요!">
+                    </div>
+                    <div class="quiz__answer none"></div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="quiz__confirm">
+                        정답
+                    </button>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <div class="quiz__timer"></div>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        // 문제 정보
+        
+
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        const quizDate = quizWrap.querySelector(".quiz__date");
+        const quizType = quizWrap.querySelector(".quiz__type");
+        const quizNum = quizWrap.querySelector(".quiz__question em");
+        const quizQuestion = quizWrap.querySelector(".quiz__question span");
+        const quizAnswer = quizWrap.querySelector(".quiz__answer");
+        const quizDesc = quizWrap.querySelector(".quiz__desc");
+        const quizConfirm = quizWrap.querySelector(".quiz__confirm");
+        const quizInput = quizWrap.querySelector(".quiz__input input");
+        const quizAnimation =quizWrap.querySelector(".quiz__animation");
+        
+        // 문제 출력
+        quizDate.innerText = infoDate;
+        quizType.innerText = infoType;
+        quizNum.innerText = infoNum;
+        quizQuestion.innerText = infoQuestion;
+        quizAnswer.innerText = infoAnswer;
+        quizDesc.innerText = infoDesc;
+
+        // 정답 해설 숨기기
+        quizAnswer.classList.add("none");
+        quizDesc.classList.add("none");
+
+        // 정답 확인하기
+        quizConfirm.addEventListener("click", () => {
+            const userAnswer = quizInput.value;           
+            
+            if(infoAnswer == userAnswer){
+                quizAnimation.classList.add("like");
+            } else{
+                quizAnimation.classList.add("dislike");
+            };
+            quizConfirm.classList.add("none");
+            quizInput.classList.add("none");
+            quizDesc.classList.remove("none");
+            quizAnswer.classList.remove("none");
+        });
+        let timer;
+
+        function startTimer() {
+            timer = setTimeout(() => {
+                // 다음 퀴즈로 이동하는 로직을 추가하세요.
+                // 예: window.location.href = "다음 퀴즈의 URL";
+            }, 60000); // 5초 후에 다음 퀴즈로 이동 (5000 밀리초 = 5초)
+        }
+
+        function stopTimer() {
+            clearTimeout(timer);
+        }
+
+        // 정답 확인하기
+        quizConfirm.addEventListener("click", () => {
+            // 사용자가 정답을 입력하고 확인 버튼을 클릭할 때
+            // 타이머를 중지하고 다음 퀴즈로 이동하는 로직을 추가하세요.
+            stopTimer();
+            // 예: window.location.href = "다음 퀴즈의 URL";
+        });
+
+        // 퀴즈가 로드될 때 타이머 시작
+        startTimer();
+    </script>   
+</body>
+</html>
