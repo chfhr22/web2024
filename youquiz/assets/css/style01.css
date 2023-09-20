@@ -128,6 +128,7 @@ body {
     flex-wrap: wrap;
     margin-top: 40px;
     position: relative;
+    text-align: center;
 }
 .quiz__wrap .logo img {
     margin-top: 150px;
@@ -169,7 +170,7 @@ body {
     left: 35%;
 
 }
-#btn .lv span {}
+
 .quiz__wrap > .quiz {
     width: 500px;
     min-height: 400px;

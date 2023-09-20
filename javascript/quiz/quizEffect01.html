@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="assets/css/quiz.css">
     <link rel="stylesheet" href="assets/css/ani.css">
+    <link rel="stylesheet" href="../../assets/css/default.min.css">
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
 
 </head>
 <body>
@@ -86,8 +88,865 @@
 
     <footer id="footer">
         <a href="mailto:chfhrdk@gmail.com">chfhrdk@gmail.com</a>
+
+        <div class="modal__wrap">
+            <div class="modal__btn">소스보기</div>
+            <div class="modal__cont">
+                <div class="modal__box">
+                    <div class="title">
+                        <span class="dot" aria-label="true"></span>
+                        <div class="taps">
+                            <div class="active">
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                        <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                        <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                    </svg>
+                                </span>
+                                <em>Javascript</em>
+                                <span class="close">
+                                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                        <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                        <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                    </svg>
+                                </span>
+                                <em>CSS</em>
+                                <span class="close">
+                                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cont">
+                        <div class="active">
+<pre><code class="language-js">// 문제 정보
+    const infoDate = "2021년 10월";
+    const infoType = "정보처리 기능사";
+    const infoNum = "1";
+    const infoQuestion = "CPU의 정보처리 속도 단위 중 초당 100만 개의 연산을 수행한다는 의미의 단위는?";
+    const infoAnswer = "MIPS";
+    const infoDesc = "LIPS는 초당 1개, KIPS는 초당 1000개, MIPS는 초당 100만개의 연산을 수행하는 것을 의미한다.";
+
+    // 선택자
+    const quizWrap = document.querySelector(".quiz__wrap");
+    const quizDate = quizWrap.querySelector(".quiz__date");
+    const quizType = quizWrap.querySelector(".quiz__type");
+    const quizNum = quizWrap.querySelector(".quiz__question em");
+    const quizQuestion = quizWrap.querySelector(".quiz__question span");
+    const quizAnswer = quizWrap.querySelector(".quiz__answer");
+    const quizDesc = quizWrap.querySelector(".quiz__desc");
+    const quizConfirm = quizWrap.querySelector(".quiz__confirm");
+    const quizInput = quizWrap.querySelector(".quiz__input input");
+    const quizAnimation =quizWrap.querySelector(".quiz__animation");
+    
+    // 문제 출력
+    quizDate.innerText = infoDate;
+    quizType.innerText = infoType;
+    quizNum.innerText = infoNum;
+    quizQuestion.innerText = infoQuestion;
+    quizAnswer.innerText = infoAnswer;
+    quizDesc.innerText = infoDesc;
+
+    // 정답 해설 숨기기
+    quizAnswer.classList.add("none");
+    quizDesc.classList.add("none");
+
+    // 정답 확인하기
+    quizConfirm.addEventListener("click", () => {
+        const userAnswer = quizInput.value;           
+        
+        if(infoAnswer == userAnswer){
+            quizAnimation.classList.add("like");
+        } else{
+            quizAnimation.classList.add("dislike");
+        };
+        quizConfirm.classList.add("none");
+        quizInput.classList.add("none");
+        quizDesc.classList.remove("none");
+        quizAnswer.classList.remove("none");
+});</code></pre>
+                        </div>
+                        <div>
+<pre><code class="language-js">@font-face {
+        font-family: "nanumSquareNeo";
+        font-weight: 300;
+        font-style: normal;
+        src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.eot");
+        src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.eot?#iefix") format("embedded-opentype"),
+             url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.woff2") format("woff2"),
+             url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.woff") format("woff"),
+             url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.ttf") format("truetype");
+        font-display: swap;
+    } 
+    @font-face {
+        font-family: "nanumSquareNeo";
+        font-weight: 400;
+        font-style: normal;
+        src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.eot");
+        src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.eot?#iefix") format("embedded-opentype"),
+             url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.woff2") format("woff2"),
+             url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.woff") format("woff"),
+             url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.ttf") format("truetype");
+        font-display: swap;
+    } 
+    @font-face {
+        font-family: "nanumSquareNeo";
+        font-weight: 700;
+        font-style: normal;
+        src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.eot");
+        src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.eot?#iefix") format("embedded-opentype"),
+             url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.woff2") format("woff2"),
+             url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.woff") format("woff"),
+             url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.ttf") format("truetype");
+        font-display: swap;
+    } 
+    @font-face {
+        font-family: "nanumSquareNeo";
+        font-weight: 800;
+        font-style: normal;
+        src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.eot");
+        src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.eot?#iefix") format("embedded-opentype"),
+             url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.woff2") format("woff2"),
+             url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.woff") format("woff"),
+             url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.ttf") format("truetype");
+        font-display: swap;
+    } 
+    @font-face {
+        font-family: "nanumSquareNeo";
+        font-weight: 900;
+        font-style: normal;
+        src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.eot");
+        src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.eot?#iefix") format("embedded-opentype"),
+             url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.woff2") format("woff2"),
+             url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.woff") format("woff"),
+             url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.ttf") format("truetype");
+        font-display: swap;
+    } 
+    
+    /* reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-family: "nanumSquareNeo";
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    
+    body {
+        background-image: url(../img/bg03-min.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+    body::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.3);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+    
+    /* common */
+    .none {
+        display: none !important;
+    }
+    
+    /* scroll */
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #1f224a26;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: rgba(69, 71, 100, 0.321);
+        border-radius: 20px;
+    }
+    
+    /* header */
+    #header {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #header h1 a {
+        display: inline-block;
+        color: #fff;
+        padding: 20px;
+        font-size: 30px;
+    }
+    #header nav {
+        padding-right: 20px;
+    }
+    #header nav li {
+        display: inline-block;
+    }
+    #header nav li a {
+        padding: 10px;
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        border: 1px solid #fff;
+        text-align: center;
+        box-shadow: 1px 1px 0px #fff;
+        line-height: 1;
+        color: #fff;
+    }
+    #header nav li.active a {
+        background-color: #fff;
+        color: #000;
+    }
+    
+    /* main */
+    #main {
+        min-height: 85vh;
+    }
+    
+    /* quiz__wrap */
+    .quiz__wrap {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+    .quiz__wrap > .quiz {
+        width: 500px;
+        min-height: 400px;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+        margin: 10px;
+    }
+    .quiz__wrap > .quiz.good {
+        position: relative;
+    }
+    .quiz__wrap > .quiz.good::before {
+        content: '';
+        width: 200px;
+        height: 200px;
+        border: 20px solid rgba(255, 0, 0, 0.577);
+        border-radius: 50%;
+        position: absolute;
+        left: -50px;
+        top: -50px;
+        z-index: 100;
+    }
+    .quiz__wrap > .quiz.bad {
+        position: relative;
+    }
+    .quiz__wrap > .quiz.bad::before {
+        content: '';
+        width: 150px;
+        height: 10px;
+        background-color: rgba(255, 0, 0, 0.577);
+        position: absolute;
+        left: 0;
+        top: 80px;
+        border-radius: 30px;
+        transform: rotate(45deg);
+        z-index: 100;
+    }
+    .quiz__wrap > .quiz.bad::after {
+        content: '';
+        width: 150px;
+        height: 10px;
+        background-color: rgba(255, 0, 0, 0.577);
+        position: absolute;
+        left: 0;
+        top: 80px;
+        border-radius: 30px;
+        transform: rotate(-45deg);
+        z-index: 100;
+    }
+    .quiz__header {
+        margin-bottom: 20px;
+        color: #696969;
+    }
+    .quiz__date {
+        display: inline-block;
+        margin-right: 5px;
+        color: #696969;
+    }
+    .quiz__type {
+        color: #696969;
+    }
+    .quiz__question {
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+    .quiz__question em {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+    }
+    .quiz__question span {
+        font-size: 24px;
+        line-height: 1.5;
+        font-weight: 400;
+    }
+    .quiz__choice {
+        margin-bottom: 20px;
+    }
+    .quiz__choice label {
+        display: block;
+        width: 100%;
+    }
+    .quiz__choice label input {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+    }
+    .quiz__choice label span:hover {
+        border-color: #412E91;
+        color: #412E91;
+        box-shadow: 1px 1px 5px #412E91;
+    }
+    .quiz__choice label span {
+        position: relative;
+        display: flex;
+        align-items: center;
+        border: 1px solid #eee;
+        padding: 17px 17px 17px 17px;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        font-size: 16px;
+        line-height: 1.5;
+        cursor: pointer;
+        font-weight: 400;
+    }
+    .quiz__choice label span::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        box-shadow: inset 0 0 0 4px #412E91;
+        margin-right: 15px;
+        transition: all 0.3s;
+    }
+    .quiz__choice label input:checked + span {
+        border-color: #412E91;
+        color: #412E91;
+        box-shadow: 1px 1px 5px #412E91;
+        background-color: #6b4ee11a;
+        font-weight: 700;
+    }
+    .quiz__choice label input:checked + span::before {
+        box-shadow: inset 0 0 0 9px #412E91;;
+    }
+    .quiz__img {
+        margin-bottom: 10px;
+    }
+    .quiz__img img {
+        width: 100%;
+        border: 1px solid #eee;
+    }
+    .quiz__choice .choice {
+        border: 1px solid #eee;
+        padding: 17px;
+        margin-bottom: 5px;
+        font-size: 16px;
+        line-height: 1.5;
+        transition: border-color 0.3s, background-color 0.3s;
+        border-radius: 3px;
+        color: #666;
+    }
+    .quiz__choice .choice:hover {
+        border-color: #123;
+        background-color: rgba(83, 163, 244, 0.169);
+        cursor: pointer;
+    }
+    .quiz__choice .choice.correct {
+        position: relative;
+        border-color: #123;
+        background-color: rgba(83, 163, 244, 0.169);
+        color: #123;
+        padding-right: 57px;
+    }
+    .quiz__choice .choice.correct::after {
+        content: '';
+        width: 14px;
+        height: 14px;
+        border: 6px solid #123;
+        border-radius: 50%;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .quiz__choice .choice.incorrect {
+        position: relative;
+        border-color: rgb(248, 93, 93);
+        background-color: rgba(244, 83, 83, 0.132);
+        color: rgb(238, 82, 100);
+        padding-right: 57px;
+    }
+    .quiz__choice .choice.incorrect::before {
+        content: '';
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 28px;
+        height: 6px;
+        background-color: red;
+        border-radius: 4px;
+        transform: rotate(45deg);
+        margin-top: -3px;
+    }
+    .quiz__choice .choice.incorrect::after {
+        content: '';
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 28px;
+        height: 6px;
+        background-color: red;
+        border-radius: 4px;
+        transform: rotate(-45deg);
+        margin-top: -3px;
+    }
+    .quiz__animation {
+        border: 1px solid #b8a8ff;
+        margin-bottom: 10px;
+    }
+    .quiz__input {
+        margin-bottom: 10px;
+        border: 1px solid #b8a8ff;
+        border-radius: 3px;
+    }
+    .quiz__input input {
+        width: 100%;
+        padding: 20px;
+    }
+    .quiz__answer {
+        background-color: #ede9ff;
+        border: 1px solid #b8a8ff;
+        padding: 20px;
+        margin-bottom: 10px;
+        line-height: 1.5;
+        text-align: center;
+        color: #666;
+    }
+    .quiz__answer::before {
+        content: "☆ 정답 : ";
+    }
+    .quiz__desc {
+        border: 1px solid #eaeaea;
+        padding: 20px;
+        margin-bottom: 10px;
+        line-height: 1.5;
+        color: #666;
+    }
+    .quiz__desc::before {
+        content: "★ 설명 : ";
+    }
+    .quiz__confirm {
+        background-color: #412E91;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        display: block;
+        border: 0;
+        width: 100%;
+        transition: all 0.3s; 
+        border: 1px dashed #412E91;
+        border-radius: 3px;
+    }
+    .quiz__confirm:hover {
+        border: 1px dashed #412E91;
+        background-color: transparent;
+        color: #412E91;
+        cursor: pointer;
+    }
+    .quiz__next {
+        width: 100%;
+        border: 1px dashed #123;
+        padding: 15px 20px;
+        background-color: #fff;
+        cursor: pointer;
+        color: #123;
+        transition: all 0.3s;
+    }
+    .quiz__next:hover {
+        background-color: rgba(109, 178, 247, 0.146);
+    }
+    .quiz__indicator {
+        background-color: rgba(109, 178, 247, 0.146);
+        padding: 20px;
+        border-radius: 3px;
+        margin-bottom: 20px;
+    }
+    .quiz__indicator span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #123;
+        box-shadow: 1px 1px #123;
+    }
+    .quiz__indicator span.correct {
+        background-color: #123;
+        position: relative;
+    }
+    .quiz__indicator span.correct::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border: 4px solid #fff;
+        border-radius: 50%;
+        position: absolute;
+        left: 1px;
+        top: 1px;
+    }
+    .quiz__indicator span.incorrect {
+        position: relative;
+    }
+    .quiz__indicator span.incorrect::before {
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 7px;
+        width: 14px;
+        height: 4px;
+        border-radius: 4px;
+        background-color: #123;
+        transform: rotate(-45deg);
+    }
+    .quiz__indicator span.incorrect::after {
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 7px;
+        width: 14px;
+        height: 4px;
+        border-radius: 4px;
+        background-color: #123;
+        transform: rotate(45deg);
+    }
+    
+    .quiz__check {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 100px;
+        line-height: 100px;
+        height: 100px;background-color: #123;
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 1px dashed transparent;
+    }
+    .quiz__check:hover {
+        background-color: rgba(17, 34, 51, 0.748);
+        border: 1px dashed #123;
+    }
+    /* footer */
+    #footer {
+        text-align: center;
+        font-size: 14px;
+    }
+    #footer a {
+        display: block;
+        color: #fff;
+        padding: 40px;
+    }
+    #footer a:hover {
+        text-decoration: underline;
+        text-underline-position: under;
+    }
+    
+    /* modal */
+    .modal__btn {
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 50px;
+        display: inline-block;
+        padding: 10px 20px;
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        cursor: pointer;
+    }
+    .modal__cont {
+        width: 100%;
+        height: 100vh;
+        background-color: #00000070;
+        position: fixed;
+        left: 0;
+        top: 0;
+        overflow-x: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        transform: scale(0);
+    }
+    .modal__box {
+        width: 70%;
+        height: 70%;
+        border-radius: 10px;
+        background-color: #ccc;
+        transform: scale(0);
+    }
+    .modal__box .title {
+        padding: 1rem;
+        background-color: #123;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        height: 50px;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+    .modal__box .title .dot {
+        width: 15px;
+        height: 15px;
+        background-color: #fff;
+        display: inline-block;
+        border-radius: 50%;
+        position: relative;
+        margin-left: 2rem;
+    }
+    .modal__box .title .dot::before {
+        content: '';
+        position: absolute;
+        left: 25px;
+        top: 0;
+        width: 15px;
+        height: 15px;background-color: #fff;
+        border-radius: 50%;
+    }
+    .modal__box .title .dot::after {
+        content: '';
+        position: absolute;
+        right: 25px;
+        top: 0;
+        width: 15px;
+        height: 15px;background-color: #fff;
+        border-radius: 50%;
+    }
+    
+    .modal__box .title .taps {
+        display: flex;
+        margin-left: 50px;
+    }
+    .modal__box .title .taps > div {
+        color: #123;
+        background-color: #199;
+        padding: 0.35rem 0.8rem 0.25rem 0.8rem;
+        align-items: center;
+        border-radius: 0.4rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        margin-right: 0.5rem;
+    }
+    .modal__box .title .taps > div.active {
+        background-color: #177;
+    }
+    .modal__box .title .taps > div em {
+        font-style: normal;
+    }
+    .modal__box .title .taps > div .favicon {
+        margin-right: 0.4rem;
+        margin-top: 0.2rem;
+    }
+    .modal__box .title .taps > div .close {
+        margin-left: 3rem;
+        margin-top: 0.2rem;
+    }
+    .modal__box .cont {
+        background-color: #282936;
+        height: 100%;
+        overflow-y: hidden;
+        box-sizing: border-box;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        text-align: left;
+    }
+    .modal__box .cont > div {
+        /* display: none; */
+        overflow-y: scroll;
+        height: 100%;
+    }
+    .modal__box .cont > div.active {
+        display: block;
+        height: 100%;
+    }
+    .modal__close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        background-color: #fff;
+        padding: 1rem 1rem 0.8rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+        opacity: 0;
+    }
+    .modal__close:hover {
+        background-color: rgba(124, 182, 240, 0.548);
+    }
+    
+    /* 모달 애니메이션 */
+    .modal__cont.show {
+        animation: foldOut 1s ease forwards;
+    }
+    .modal__cont.show .modal__box {
+        animation: zoomOut 0.5s 1s ease forwards;
+    }
+    .modal__cont.show .modal__close {
+        animation: opacityOut 0.5s 1.5s ease forwards;
+    }
+    
+    .modal__cont.show.hide {
+        animation: foldIn 0.3s 0.5s ease backwards;
+    }
+    .modal__cont.show.hide .modal__box {
+        animation: zoomIn 0.5s ease forwards;
+    }
+    .modal__cont.show.hide .modal__close {
+        animation: opacityIn 0.5s ease forwards;
+    }
+    
+    @keyframes foldOut {
+        0% {transform: scaleX(0.0001) scaleY(1);}
+        50% {transform: scaleX(0.0001) scaleY(1)}
+        100% {transform: scaleX(1) scaleY(1)}
+    }
+    @keyframes foldIn {
+        0% {transform: scaleX(1) scaleY(1)}
+        50% {transform: scaleX(0.0001) scaleY(1)}
+        100% {transform: scaleX(0.0001) scaleY(1);}
+    }
+    @keyframes zoomOut {
+        0% {transform: scale(0);}
+        100% {transform: scale(1);}
+    }
+    @keyframes zoomIn {
+        0% {transform: scale(1);}
+        100% {transform: scale(0);}
+    }
+    @keyframes opacityOut {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+    @keyframes opacityIn {
+        0% {opacity: 1;}
+        100% {opacity: 0;}
+    }
+    
+    @media (max-width: 600px){
+        #header {
+            flex-direction: column;
+        }
+        #header h1 a {
+            padding: 15px;
+        }
+        #header nav {
+            padding-right: 0;
+            margin-bottom: 20px;
+        }
+        #header nav li a {
+            width: 30px;
+            height: 30px;
+            padding: 7px;
+        }
+        .quiz__wrap {
+            padding: 0 6px;
+            margin-top: 0;
+        }
+        .quiz__wrap > .quiz {
+            width: 100%;
+            padding: 30px 20px;
+        }
+        .quiz__header {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .quiz__date {
+            font-size: 14px;
+        }
+        .quiz__type {
+            font-size: 14px;
+        }
+        .quiz__question {
+            margin-bottom: 20px;
+            line-height: 1.5;
+            font-size: 20px;
+        }
+        .quiz__question em {
+            font-size: 20px;
+        }
+        .quiz__question span {
+            font-size: 20px;
+        }
+        .quiz__input input {
+            padding: 14px;
+        }
+        .quiz__answer {
+            padding: 14px;
+        }
+        .quiz__desc {
+            padding: 14px;
+        }
+        .quiz__choice label span {
+            padding: 13px;
+        }
+        .quiz__confirm {
+            padding: 13px;
+        }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__close">
+                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
     </footer>
     <!-- //footer -->
+
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../slider/js/common.js"></script>
 
     <script>
         // 문제 정보
