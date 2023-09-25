@@ -285,7 +285,7 @@
                 if (timer <= 0) {
                     // 타이머가 0 이하로 내려가면 종료
                     clearInterval(interval);
-                    alert("게임 종료!" + correctcount);
+                    alert("Time Out!" + correctcount);
                     // 다음 문제로 넘어가거나 게임 종료 로직을 추가할 수 있습니다.
                 } else {
                     timer--; // 1초씩 감소
@@ -315,15 +315,13 @@
                     quizConfirm.classList.remove("none");   // 정답 버튼 추가
                     currentIndex++;                         // 퀴즈 번호 추가
                     updateQuiz(currentIndex);               // 퀴즈 반영
-                    clearInterval(interval); // 기존 타이머를 중지
-                    startTimer(); // 새로운 타이머 시작
+                    // clearInterval(interval); // 기존 타이머를 중지
+                    // startTimer(); // 새로운 타이머 시작
                 } else {
-                    alert("퀴즈가 종료되었습니다." + correctcount);
+                    alert("게임 종료!" + correctcount);
                 }
             });
         }
-
-        // 사용자가 클릭한 정답
            
         // 정답 확인
         const checkAnswer = () => {         
@@ -331,7 +329,6 @@
             const userAnswer = quizInput.value;  
             const correctAnswer = quizInfo[currentIndex].infoAnswer;       // 정답지의 정답
             const quizElement = quizWrap.querySelector(".quiz");
-            const descElement = quizWrap.querySelector(".quiz__desc");
             const answerElement = quizWrap.querySelector(".quiz__answer");
             
             if(userAnswer === correctAnswer){

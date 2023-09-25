@@ -258,17 +258,7 @@ body {
     color: #319073;
     cursor: pointer;
 }
-
-/* footer */
-#footer {
-    text-align: center;
-    font-size: 14px;
-    height: 100px;
-    width: 500px;
-    margin: 0 auto;
-}
-
-/* 게이지 바 스타일 */
+/* 타이머 게이지 바 스타일 */
 .quiz__progressbar {
     height: 20px;
     width: 100%;
@@ -286,4 +276,13 @@ body {
     top: 0;
     left: 0;
     transition: width 1s linear; /* 게이지 바가 움직이는 속도 조절 */
+}
+
+/* footer */
+#footer {
+    text-align: center;
+    font-size: 14px;
+    height: 100px;
+    width: 500px;
+    margin: 0 auto;
 }
