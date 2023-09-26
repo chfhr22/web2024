@@ -77,6 +77,9 @@ body {
     background-repeat: no-repeat;
     position: relative;
 }
+body.fixed {
+    background-attachment: fixed;
+}
 body::after {
     content: '';
     width: 100%;
@@ -748,4 +751,120 @@ body::after {
     .quiz__confirm {
         padding: 13px;
     }
+}
+
+/* cbt__box */
+.cbt__box {
+    width: 500px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0 / 10%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+    display: none;
+}
+.cbt__box h2 {
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 0;
+}
+.cbt__box select {
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.cbt__box p {
+    font-size: 20px;
+    line-height: 1.7;
+    text-align: center;
+}
+.cbt__box input {
+    width: 240px;
+}
+.cbt__box em {
+    font-style: normal;
+    font-size: 20px;
+    position: relative;
+}
+.cbt__box span {
+    color: #797878;
+    display: inline-block;
+    margin-top: 20px;
+}
+.cbt__box button {
+    display: inline-block;
+    border: 1px solid #000;
+    background-color: rgb(82, 164, 247);
+    padding: 20px 40px;
+    border-radius: 40px;
+    width: 80%;
+    margin-top: 50px;
+}
+
+.cbt__wrap {
+    padding: 20px;
+}
+.cbt__header {
+    position: fixed;
+    left: 20px;
+    top: 80px;
+    z-index: 1000;
+    width: calc(100% - 370px);
+    height: 80px;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid#eee;
+}
+.cbt__title {
+    font-size: 28px;
+}
+.cbt__info {
+    display: flex;
+}
+.cbt__time {
+    background-color: #127;
+    color: #fff;
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 20px;
+
+}
+.cbt__conts {
+    width: calc(100% - 330px);
+    height: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+.cbt__aside {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: 300px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+}
+.cbt__name,
+.cbt__submit {
+    background-color: #127;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 40px;
+    text-align: center;
+    margin: 10px;
 }
