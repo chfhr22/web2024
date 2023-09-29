@@ -10,23 +10,25 @@
 </head>
 <body>
   <div id="quiz__wrap">
-    <header id="header"></header>
-    <main id="main" class="container">
-      <div class="quiz__time">
-        기능사(2020년03회)
-      </div>
-      <div class="quiz__question">
-        빈칸에 알맞은 명령문을 완성하시오.
-      </div>
-      <div class="question__desc">
-        ALTER TABLE customer ( ① ) phone varchar(255)
-      </div>
-    </main>
-    <footer id="footer" class="container">
-      <div class="quiz__answer" >
-        ADD
-      </div>
-    </footer>
+    <div class="quiz">
+      <header id="header"></header>
+      <main id="main" class="container">
+        <div class="quiz__time">
+
+        </div>
+        <div class="quiz__question">
+
+        </div>
+        <div class="question__desc">
+
+        </div>
+      </main>
+      <footer id="footer" class="container">
+        <div class="quiz__answer none" >
+
+        </div>
+      </footer>
+    </div>
   </div>
 
   <script>
@@ -38,9 +40,62 @@
     const quizAnswer = quizWrap.querySelector(".quiz__answer");
 
     // 문제 가져오기
+    let quizInfo = [];
+    let currentQuiz = 0;
+
     const fetchQuiz = () => {
-      fetch("")
-    }
+      fetch("https://chfhr22.github.io/webs2024/homequiz/assets/json/gineungsa.json")
+      .then(res => res.json())
+      .then(items => {
+        quizInfo = items.map((item, index) => {
+          const formattedQuiz = {
+            infoDate: item.time,
+            infoQuestion: item.question,
+            infoDesc: item.question_desc,
+            infoAnswer: item.correct_answer
+          }
+
+          return formattedQuiz;
+        });
+
+        updateQuiz();
+      });
+    };
+
+    // 문제 출력
+    const updateQuiz = () => {
+      if (currentQuiz < quizInfo.length) {
+        const quiz = quizInfo[currentQuiz];
+        quizTime.textContent = quiz.infoDate;
+        quizQuestion.textContent = quiz.infoQuestion;
+        questionDesc.textContent = quiz.infoDesc;
+        quizAnswer.textContent = quiz.infoAnswer;
+        quizAnswer.classList.add("none");
+      } else {
+        quizWrap.innerHTML = "<p>모든 문제를 풀었습니다.</p>";
+      }
+    };
+
+    // 다음 문제로 이동
+    const nextQuiz = () => {
+      currentQuiz++;
+      updateQuiz();
+      quizAnswer.classList.add("none");
+    };
+
+    // 화면 클릭시 다음 문제로
+    document.addEventListener("click", () => {
+      if (quizAnswer.classList.contains("none")) {
+        quizAnswer.classList.remove("none");
+      } else {
+        nextQuiz();
+      }
+    });
+
+    // 페이지가 로드된 후 실행
+    document.addEventListener("DOMContentLoaded", () => {
+      fetchQuiz();
+    });
   </script>
 </body>
 </html>

@@ -10,7 +10,7 @@ body {
 }
 #main {
   width: 700px;
-  height: 400px;
+  height: 470px;
   background-color: #fff;
   border: 1px solid #123;
   border-radius: 10px;
@@ -26,11 +26,11 @@ body {
   margin-bottom: 10px;
 }
 .quiz__question {
-  font-size: 30px;
+  font-size: 25px;
   margin-bottom: 20px;
 }
 .question__desc {
-  font-size: 30px;
+  font-size: 27px;
 }
 #footer {
   width: 700px;
@@ -41,4 +41,7 @@ body {
 }
 .quiz__answer {
   font-size: 30px;
+}
+.none {
+  display: none;
 }
