@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정보처리기능사 주관식</title>
+
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div id="quiz__wrap">
+    <header id="header"></header>
+    <main id="main" class="container">
+      <div class="quiz__time">
+        기능사(2020년03회)
+      </div>
+      <div class="quiz__question">
+        빈칸에 알맞은 명령문을 완성하시오.
+      </div>
+      <div class="question__desc">
+        ALTER TABLE customer ( ① ) phone varchar(255)
+      </div>
+    </main>
+    <footer id="footer" class="container">
+      <div class="quiz__answer" >
+        ADD
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // 선택자
+    const quizWrap = document.querySelector("#quiz__wrap");
+    const quizTime = quizWrap.querySelector(".quiz__time");
+    const quizQuestion = quizWrap.querySelector(".quiz__question");
+    const questionDesc = quizWrap.querySelector(".question__desc");
+    const quizAnswer = quizWrap.querySelector(".quiz__answer");
+
+    // 문제 가져오기
+    const fetchQuiz = () => {
+      fetch("")
+    }
+  </script>
+</body>
+</html>

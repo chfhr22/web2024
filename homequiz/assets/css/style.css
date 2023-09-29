@@ -1,0 +1,44 @@
+body {
+  background-image: url(../img/bg02.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 80vh;
+}
+#header {
+  margin-top: 130px;
+}
+#main {
+  width: 700px;
+  height: 400px;
+  background-color: #fff;
+  border: 1px solid #123;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.container {
+  margin: 0 auto;
+  padding: 20px;
+}
+.quiz__time {
+  font-size: 20px;
+  color: #a9a9a9;
+  margin-bottom: 10px;
+}
+.quiz__question {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.question__desc {
+  font-size: 30px;
+}
+#footer {
+  width: 700px;
+  height: 200px;
+  background-color: #fff;
+  border: 1px solid #123;
+  border-radius: 10px;
+}
+.quiz__answer {
+  font-size: 30px;
+}
