@@ -45,3 +45,59 @@ body {
 .none {
   display: none;
 }
+
+@media (max-width: 800px){
+  #header {
+    margin-top: 70px;
+  }
+  #main {
+    width: 500px;
+    height: 300px;
+  }
+  #footer {
+    width: 500px;
+    height: 100px;
+  }
+  .quiz__time {
+    font-size: 15px;
+  }
+  .quiz__question {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+  .question__desc {
+    font-size: 17px;
+  }
+  .quiz__answer {
+    font-size: 17px;
+  }
+}
+@media (max-width: 550px){
+  #header {
+    margin-top: 30px;
+  }
+  #main {
+    width: 350px;
+  }
+  #footer {
+    width: 350px;
+    height: 70px;
+    padding: 15px;
+  }
+  .quiz__time {
+    font-size: 10px;
+  }
+  .quiz__question {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .question__desc {
+    font-size: 14px;
+  }
+  .quiz__answer {
+    font-size: 13px;
+  }
+}
+/* @media (max-width: 360px){
+
+} */
