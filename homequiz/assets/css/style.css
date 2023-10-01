@@ -1,5 +1,5 @@
 body {
-  background-image: url(../img/bg02.jpg);
+  background-image: url(../img/bg05.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -98,6 +98,30 @@ body {
     font-size: 13px;
   }
 }
-/* @media (max-width: 360px){
-
-} */
+@media (max-width: 360px){
+  #header {
+    margin-top: 15px;
+  }
+  #main {
+    width: 250px;
+    height: 320px;
+  }
+  #footer {
+    width: 250px;
+    height: 70px;
+    padding: 10px;
+  }
+  .quiz__time {
+    font-size: 10px;
+  }
+  .quiz__question {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .question__desc {
+    font-size: 12px;
+  }
+  .quiz__answer {
+    font-size: 12px;
+  }
+}
