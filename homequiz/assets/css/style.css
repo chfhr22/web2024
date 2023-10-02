@@ -1,9 +1,9 @@
 body {
-  background-image: url(../img/bg05.jpg);
+  background-image: url(../img/bg06.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
-  height: 80vh;
+  background-position: center;
+  height: 90vh;
 }
 #header {
   margin-top: 130px;
