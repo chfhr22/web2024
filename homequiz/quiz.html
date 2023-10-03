@@ -72,7 +72,9 @@
         quizAnswer.textContent = quiz.infoAnswer;
         quizAnswer.classList.add("none");
       } else {
-        quizWrap.innerHTML = "<p>모든 문제를 풀었습니다.</p>";
+        alert("문제를 모두 풀었습니다.");
+        currentQuiz = 0;
+        updateQuiz();
       }
     };
 
