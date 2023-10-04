@@ -242,7 +242,7 @@
                     if(correct > 10){
                         cont.innerHTML = `축하합니다! ${correct}개 맞추셨네요. <br>다음 단계로 가실 수 있습니다!`;
                     } else {
-                        cont.innerHTML = `아쉽네요. ${correct}개 맞추셔서 <br>다음 단계는 못가게 되었습니다.ㅠㅠ`;
+                        cont.innerHTML = `아쉽네요. ${correct}개 맞추셨습니다. <br>미션 실패!`;
                     }
                     timer = duration;
                     quizTimer.classList.remove("start");
@@ -252,7 +252,7 @@
         }
 
         window.onload = function () {
-            var duration = 50; // 타이머 시간 (초)
+            var duration = 60; // 타이머 시간 (초)
             var display = document.querySelector(".timer");
             startTimer(duration, display);
         };
