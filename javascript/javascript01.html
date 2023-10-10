@@ -63,6 +63,7 @@
                     <li><a href="#sample19">19. 객체 : 데이터 저장(키와 값) - 표현방법8 (객체 + 함수)</a></li>
                     <li><a href="#sample20">20. 객체 : 데이터 저장(키와 값) - 표현방법9 (객체 구조 분해 할당)</a></li>
                     <li><a href="#sample21">21. 객체 : 데이터 저장(키와 값) - 표현방법10 (객체 펼침연산자)</a></li>
+                    <li><a href="#sample22">22. 파일 : 데이터 교환(JSON)</a></li>
                 </ul>
                 <ul>
                     <li><a href="#sample100">전역변수 / 지역변수</a></li>
@@ -785,6 +786,27 @@
                 </div>
                 <!-- //sample21 -->
 
+                <div id="sample22" class="sample">
+                    <h3>22. </h3>
+                    <p></p>
+<pre><code class="language-js">{
+
+}
+</code></pre>
+                    <p class="desc">
+                        
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                
+                            </div>
+                        </details>
+                    </div>                    
+                </div>
+                <!-- //sample22 -->
+
                 <div id="sample100" class="sample">
                     <h3>전역변수 / 지역변수</h3>
                     <p></p>
@@ -1262,8 +1284,21 @@
 
     
     <script>
-        
+        //22 
+        // json 데이터를 객체로 변환
+        const jsonString = '{"name": "webs", "age": "30"}';
+        const jsonObject = JSON.parse(jsonString);
+        console.log(jsonObject.name); 
 
+        // webs
+
+
+        // 객체를 json 데이터로 변환
+        const person = {name: "webs", age: 30};
+        const jsonPerson = JSON.stringify(person);
+        console.log(jsonPerson);
+
+        // '{"name": "webs", "age": "30"}'
     </script>
 </body>
 </html>
