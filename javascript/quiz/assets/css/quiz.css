@@ -1047,7 +1047,8 @@ body::after {
     margin-bottom: 10px;
 }
 .cbt__submit,
-.cbt__giveup {
+.cbt__giveup,
+.cbt__again {
     background-color: #412E91;
     color: #fff;
     padding: 10px 20px;

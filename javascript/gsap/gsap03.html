@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Scroll Effect03</title>
+
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        body {
+            color: #fff;
+            background-color: #111;
+            font-family: "NexonLv1Gothic";
+        }
+        #parallax__title {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 10000;
+        }
+        #parallax__title h1 {
+            font-size: 30px;
+            border-bottom: 1px dashed #fff;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            font-weight: 400;
+            display: inline-block;
+        }
+        #parallax__title p {
+            font-size: 16px;
+        }
+        #parallax__title ul {
+            margin-top: 10px;
+        }
+        #parallax__title li {
+            display: inline;
+        }
+        #parallax__title li a {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px dashed #fff;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            display: inline-block;
+        }
+        #parallax__title li.active a {
+            background-color: #fff;
+            color: #000;
+        }
+        /* parallax__cont */
+        #parallax__cont {
+            overflow: hidden;
+        }
+        .parallax__item {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #section02, #section04, #section06, #section08 {
+            background-color: #222;
+        }
+        .parallax__item__num {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            font-size: 5vh;
+            line-height: 1;
+        }
+        .parallax__item__img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        #section01 .parallax__item__img {
+            background-image: url(img/images01_mini.jpg);
+        }
+        #section02 .parallax__item__img {
+            background-image: url(img/images02_mini.jpg);
+        }
+        #section03 .parallax__item__img {
+            background-image: url(img/images03_mini.jpg);
+        }
+        #section04 .parallax__item__img {
+            background-image: url(img/images04_mini.jpg);
+        }
+        #section05 .parallax__item__img {
+            background-image: url(img/images05_mini.jpg);
+        }
+        #section06 .parallax__item__img {
+            background-image: url(img/images06_mini.jpg);
+        }
+        #section07 .parallax__item__img {
+            background-image: url(img/images07_mini.jpg);
+        }
+        #section08 .parallax__item__img {
+            background-image: url(img/images08_mini.jpg);
+        }
+        #section09 .parallax__item__img {
+            background-image: url(img/images09_mini.jpg);
+        }
+        #section10 .parallax__item__img {
+            background-image: url(img/images10_mini.jpg);
+        }
+        .parallax__item__img.active {
+            filter: hue-rotate(100deg);
+        }
+        .parallax__item__title {
+            font-size: 5vw;
+            z-index: 100;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header id="parallax__title">
+        <h1>GSAP parallax Effect03</h1>
+        <p>GSAP scrollTrigger - Pin 애니메이션 효과</p>
+        <ul>
+            <li><a href="gsap01.html">1</a></li>
+            <li><a href="gsap02.html">2</a></li>
+            <li class="active"><a href="gsap03.html">3</a></li>
+            <li><a href="gsap04.html">4</a></li>
+            <li><a href="gsap05.html">5</a></li>
+            <li><a href="gsap06.html">6</a></li>
+            <li><a href="gsap07.html">7</a></li>
+            <li><a href="gsap08.html">8</a></li>
+            <li><a href="gsap09.html">9</a></li>
+            <li><a href="gsap10.html">10</a></li>
+            <li><a href="gsap11.html">11</a></li>
+            <li><a href="gsap12.html">12</a></li>
+            <li><a href="gsap13.html">13</a></li>
+            <li><a href="gsap14.html">14</a></li>
+            <li><a href="gsap15.html">15</a></li>
+        </ul>
+    </header>
+    <main id="parallax__cont">
+        <section id="section01" class="parallax__item">
+            <span class="parallax__item__num">01</span>
+            <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section1</div>
+        </section>
+        <!-- //section01 -->
+
+        <section id="section02" class="parallax__item">
+            <span class="parallax__item__num">02</span>
+            <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section2</div>
+        </section>
+        <!-- //section02 -->
+
+        <section id="section03" class="parallax__item">
+            <span class="parallax__item__num">03</span>
+            <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section3</div>
+        </section>
+        <!-- //section03 -->
+
+        <section id="section04" class="parallax__item">
+            <span class="parallax__item__num">04</span>
+            <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section4</div>
+        </section>
+        <!-- //section04 -->
+
+        <section id="section05" class="parallax__item">
+            <span class="parallax__item__num">05</span>
+            <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section5</div>
+        </section>
+        <!-- //section05 -->
+
+        <section id="section06" class="parallax__item">
+            <span class="parallax__item__num">06</span>
+            <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section6</div>
+        </section>
+        <!-- //section06 -->
+
+        <section id="section07" class="parallax__item">
+            <span class="parallax__item__num">07</span>
+            <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section7</div>
+        </section>
+        <!-- //section07 -->
+
+        <section id="section08" class="parallax__item">
+            <span class="parallax__item__num">08</span>
+            <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section8</div>
+        </section>
+        <!-- //section08 -->
+
+        <section id="section09" class="parallax__item">
+            <span class="parallax__item__num">09</span>
+            <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section9</div>
+        </section>
+        <!-- //section09 -->
+
+        
+        
+    </main>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        // 01. 한계 섹션 고정시키기
+        const paner = document.querySelector("#section05");
+
+    </script>
+</body>
+</html>
