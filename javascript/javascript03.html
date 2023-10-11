@@ -832,7 +832,6 @@
         }
     }
     func4(func3);
-    }
 }
 </code></pre>
                     <p class="desc">
@@ -950,12 +949,173 @@
                         <details>
                             <summary>결과 확인하기</summary>
                             <div>
-                                
+                                39. 함수가 실행되었습니다. <br>
+                                40. 함수가 실행되었습니다. <br>
+                                42. 함수가 실행되었습니다. <br>
+                                41. 함수가 실행되었습니다. <br>
+                                43. 함수가 실행되었습니다. <br>
+                                44. 함수가 실행되었습니다. <br>
+                                funcA가 실행되었습니다. <br>
+                                funcB가 실행되었습니다. <br>
+                                funcC가 실행되었습니다. <br>
+                                funcD가 실행되었습니다.
                             </div>
                         </details>
                     </div>
                 </div>
                 <!-- //sample24 -->
+
+                <div id="sample25" class="sample">
+                    <h3>25. 함수 : 비동기 함수 - 프로미스</h3>
+                    <p>
+                        프로미스
+                    </p>
+<pre><code class="language-js">{
+    let data = true;
+
+    const func = new Promise((resolve, reject) => {
+        if(data){
+            resolve("45. 함수가 실행되었습니다.");
+        } else {
+            reject("45. 함수가 실행되지 않았습니다.");
+        }
+    });
+
+    func
+        .then(
+            result => console.log(result)
+        )
+        .catch(
+            error => console.log(error)
+        )
+
+    콜백 지옥 -> 프로미스
+    function funcA(){
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                console.log("funcA가 실행되었습니다.")
+                resolve();
+            }, 1000);
+        })
+    }
+    function funcB(){
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                console.log("funcB가 실행되었습니다.")
+                resolve();
+            }, 1000);
+        })
+    }
+    function funcC(){
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                console.log("funcC가 실행되었습니다.")
+                resolve();
+            }, 1000);
+        })
+    }
+    function funcD(){
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                console.log("funcD가 실행되었습니다.")
+                resolve();
+            }, 1000);
+        })
+    }
+    funcA()
+        .then(funcB)
+        .then(funcC)
+        .then(funcD)
+        .catch((error) => {
+            console.log(error)
+        })
+}
+</code></pre>
+                    <p class="desc">
+                        첫 번째 코드 블록에서, func라는 Promise를 생성합니다. data가 true인 경우 resolve를 호출하여 성공 상태로 설정하고, 그렇지 않은 경우 reject를 호출하여 실패 상태로 설정합니다. <br>
+                        그런 다음 .then과 .catch를 사용하여 해당 Promise가 성공하거나 실패했을 때 실행할 작업을 정의<br>
+                        두 번째 코드 블록에서, funcA, funcB, funcC, 및 funcD라는 비동기 함수가 정의됩니다. 각 함수는 1초 동안 대기한 후 로그를 출력하고 resolve를 호출하여 Promise를 완료 <br>
+                        그런 다음 funcA().then(funcB).then(funcC).then(funcD)를 사용하여 각 함수가 연속적으로 실행되도록 연결합니다. 이러한 함수는 하나가 완료되면 다음 함수가 실행됩니다. <br>
+                        이를 통해 콜백 지옥을 피하고 코드를 더 읽기 쉽게 만든다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                45. 함수가 실행되었습니다. <br>
+                                funcA가 실행되었습니다. <br>
+                                funcB가 실행되었습니다. <br>
+                                funcC가 실행되었습니다. <br>
+                                funcD가 실행되었습니다.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample25 -->
+
+                <div id="sample26" class="sample">
+                    <h3>26. 함수 : 비동기 함수 : asyne/await</h3>
+                    <p>
+                        asyne/await
+                    </p>
+<pre><code class="language-js">{
+    // 26-1
+    function func(){
+        console.log("46. 함수가 실행되었습니다.");
+    }
+    func();
+
+    // 26-2
+    async function func2(){
+        console.log("47. 함수가 실행되었습니다.");
+    }
+    func2();
+
+    // 26-3     에러 발생시 잡아내기 불가
+    async function func3(){
+        const result = await fetch("https://webstoryboy.github.io/webstoryboy/w_json/gineungsaShort.json")
+        const data = await result.json();
+        console.log(data)
+    }
+    func3();
+
+    // 26-4    에러가 발생시 잡아낼 수 있음
+    async function func4(){
+        try {
+            const result = await fetch("https://webstoryboy.github.io/webstoryboy/w_json/gineungsaShort.json")
+            const data = await result.json();
+            console.log(data)
+        } catch (error){
+            console.log(error);
+        }
+    }
+    func4();
+}
+</code></pre>
+                    <p class="desc">
+                        26-1: 간단한 동기 함수입니다. func 함수를 호출하여 "46. 함수가 실행되었습니다."라는 메시지를 콘솔에 출력합니다. <br>
+                        26-2: async 함수인 func2를 정의합니다. async 함수 내에서 await를 사용하지 않았으므로 이 함수는 동기 함수와 유사하게 동작합니다. <br>
+                        func2 함수를 호출하여 "47. 함수가 실행되었습니다." 메시지를 콘솔에 출력합니다. <br>
+                        26-3: async 함수인 func3를 정의합니다. 이 함수에서는 fetch를 사용하여 원격 JSON 데이터를 요청하고 await를 사용하여 결과를 기다립니다. <br>
+                        이러한 방식으로 코드가 비동기로 동작하며, await가 사용된 위치에서 해당 작업이 완료될 때까지 기다립니다. <br>
+                        그러나 이 함수에서는 에러를 캐치하지 않아서 네트워크 요청 중 에러가 발생하면 코드는 실패합니다. <br>
+                        26-4: async 함수인 func4를 정의합니다. 이 함수는 에러 처리를 위해 try...catch 블록을 사용합니다. <br>
+                        따라서 네트워크 요청 중 에러가 발생하면 catch 블록 내의 코드가 실행되고 에러 메시지가 콘솔에 출력됩니다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                46. 함수가 실행되었습니다. <br>
+                                47. 함수가 실행되었습니다. <br>
+                                data <br>
+                                data
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample26 -->
+
             </div>
             <!-- //main__sample -->
         </main>

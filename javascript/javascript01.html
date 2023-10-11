@@ -787,20 +787,32 @@
                 <!-- //sample21 -->
 
                 <div id="sample22" class="sample">
-                    <h3>22. </h3>
-                    <p></p>
+                    <h3>22. 파일 : 데이터 교환(JSON)</h3>
+                    <p>JSON에 저장된 파일 가져오기</p>
 <pre><code class="language-js">{
+    // json 데이터를 객체로 변환
+    const jsonString = '{"name": "webs", "age": "30"}';
+    const jsonObject = JSON. (jsonString);
+    console.log(jsonObject.name); 
 
+    // 객체를 json 데이터로 변환
+    const person = {name: "webs", age: 30};
+    const jsonPerson = JSON.stringify(person);
+    console.log(jsonPerson);
 }
 </code></pre>
                     <p class="desc">
-                        
+                        jsonString은 json의 형태로 있는데 <br>
+                        이를 jsonObject에 parse을 사용하여 객체형태로 불러와서 name을 호출하는 모습이다. <br>
+                        person은 객체의 형태로 데이터를 가지고 있는데 <br>
+                        jsonPerson에 stringify을 사용하여 json형태로 저장하는 모습이다.
                     </p>
                     <div class="result">
-                        <details>
+                        <details> 
                             <summary>결과 확인하기</summary>
                             <div>
-                                
+                                webs <br>
+                                '{"name": "webs", "age": "30"}'
                             </div>
                         </details>
                     </div>                    
