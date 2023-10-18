@@ -1,0 +1,199 @@
+@font-face {
+    font-family: 'KyoboHand';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+li {
+    list-style: none;
+}
+
+.container {
+    width: 1200px;
+    padding: 50px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+
+.blind {
+    display: none;
+}
+
+/* header */
+#header {
+    padding: 10px 20px;
+    background-color: blanchedalmond;
+    height: 150px;
+}
+#header > h1 {
+    font-family: "KyoboHand";
+    margin-bottom: 20px;
+}
+#header > nav {
+    margin-left: 30px;
+}
+#header > nav > ul > li {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+#header > nav > ul > li.active {
+    background-color: #000;
+}
+#header > nav > ul > li.active a {
+    background-color: #000;
+    color: #fff;
+}
+#header > nav > ul > li > a {
+    display: block;
+}
+
+/* main */
+main {
+    width: 100%;
+    background-color: blanchedalmond;
+    padding-bottom: 250px;
+}
+.search__wrap {
+    width: 1000px;
+    height: 700px;
+    background-color: #fff;
+    border-radius: 50px;
+    border: 2px solid #000;
+    margin-bottom: 100px;
+}
+.search__title {}
+.search__title span {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.search__title h1 {
+    font-family: "KyoboHand";
+    font-size: 50px;
+}
+.search__box {
+    width: 800px;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.search__box > label {
+    /* width: 30%; */
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.search__box > input {
+    width: 70%;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+}
+.search__box p {
+    margin-top: 10px;
+}
+.search__box p em {
+    text-decoration: underline;
+    text-underline-position: under;
+    font-style: normal;
+}
+.search__box__result {
+    margin: 40px 0;
+    font-size: 20px;
+    color: #123;
+}
+.search__box__result::before {
+    content: '📣';
+}
+.search__select {
+    margin: 20px 0;
+}
+.search__select span {
+    padding: 7px 13px;
+    border: 1px solid #000;
+}
+.search__btn {
+    padding: 17px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    background-color: #fff;
+    margin-left: 20px;
+}
+.search__btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.search__info {
+    margin-bottom: 50px;
+}
+.search__info > div {}
+.search__info > div span {}
+.search__list {
+    width: 100%;
+    border-top: 1px solid black;
+    overflow-y: scroll;
+}
+.search__list > span {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid rgb(247, 211, 159);
+    border-radius: 20px;
+    background-color: blanchedalmond;
+}
+.search__list > span.act {
+    background-color: rgba(255, 235, 205, 0.466);
+}
+.search__list > span:hover {
+    background-color: rgba(255, 235, 205, 0.466);
+}
+.search__list .hide {
+    display: none;
+}
+
+/* 스크롤 스타일 */
+.scroll__style::-webkit-scrollbar {
+    width: 10px;
+}
+.scroll__style::-webkit-scrollbar-thumb {
+    background-color: blanchedalmond;
+    border-radius: 20px;
+}
+.scroll__style::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+/* footer */
+#footer {
+    background-color: blanchedalmond;
+    font-size: 14px;
+}
+#footer a {
+    display: block;
+    color: #000;
+    padding: 40px;
+}
+
+@media (max-width: 1100px){
+
+}
