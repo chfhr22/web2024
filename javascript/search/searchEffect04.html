@@ -34,9 +34,9 @@
             <div class="search__box">
                 <label for="searchBox" class="blind">검색하기</label>
                 <input type="text" id="searchBox" name="searchBox" placeholder="CSS 속성을 검색하면 설명이 나옵니다.">
-                <button class="search__btn">검색</button>
+                <button class="searchButton" type="button">검색</button>
                 <div class="search__box__result">
-                    animation-delay는 애니메이션 지연 시간을 설정합니다.
+                    설명이 나오는 곳
                 </div>
             </div>
 
@@ -50,7 +50,62 @@
     </footer>
 
     <script>
-        const cssProperty = [
+       
+
+        // const searchList = document.querySelector(".search__list");
+        // const searchInfo = document.querySelector(".search__info");
+        // const searchBox = document.querySelector(".search__box input");
+        // const searchBoxResult = document.querySelector(".search__box__result");
+        // const searchBtn = document.querySelector(".search__btn");
+        
+
+        // // 출력하기
+        // cssProperty.map((css, index) => {
+        //     searchList.innerHTML += `<span>${css.name}</span>`;
+        // });
+
+        // // 입력하기
+        // searchBox.addEventListener("keyup", () => {
+        //     const searchWord = searchBox.value;
+
+        //     // findProperty(searchWord);
+        // });
+
+        // // 버튼 활성화
+        // // searchBtn.addEventListener("click", () => {
+        // //     const searchWord = searchBox.value;
+        // //     findProperty(searchWord);
+
+        // // });
+
+        // // act 클래스 붙이기
+        
+
+        // // 속성 찾기
+        // function findProperty(searchData){
+        //     const targetData = cssProperty.find((data) => data.name === searchData);
+
+        //     if(targetData == null){
+        //         searchBoxResult.textContent = "해당 속성은 존재하지 않습니다. 다시 한번 검색해주세요."
+        //         return
+        //     } else {
+        //         searchBoxResult.textContent = targetData.desc;
+        //     }
+        // }
+
+        // // 검색 목록의 각 span 요소에 클릭 이벤트 리스너 추가
+        // searchList.querySelectorAll("span").forEach((span) => {
+        //     span.addEventListener("click", () => {
+        //         const clickedProperty = span.textContent; // 클릭한 span의 텍스트 내용 가져오기
+        //         searchBox.value = clickedProperty; // 입력란의 값을 클릭한 속성으로 설정
+        //         findProperty(clickedProperty); // 설명을 표시하려면 findProperty 함수 호출   
+        //     });
+        // });
+
+    
+    </script>
+    <script>
+         const cssProperty = [
             {name: "align-content", desc: "콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다."},
             {name: "align-items", desc: "콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다."},
             {name: "align-self", desc: "개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다."},
@@ -167,61 +222,51 @@
         const searchInfo = document.querySelector(".search__info");
         const searchBox = document.querySelector(".search__box input");
         const searchBoxResult = document.querySelector(".search__box__result");
-        const searchBtn = document.querySelector(".search__btn");
-        
+        const searchButton = document.querySelector(".searchButton");
 
         // 출력하기
-        cssProperty.map((css, index) => {
-            searchList.innerHTML += `<span>${css.name}</span>`;
+        cssProperty.map((element, index) => {
+            searchList.innerHTML += `<span>${element.name}</span>`;
         });
 
-        // 입력하기
-        searchBox.addEventListener("keyup", () => {
-            const searchWord = searchBox.value;
-
-            // findProperty(searchWord);
-        });
-
-        // 버튼 활성화
-        searchBtn.addEventListener("click", () => {
-            const searchWord = searchBox.value;
-            findProperty(searchWord);
-        });
-
-        // act 클래스 붙이기
-        
-
-        // 속성 찾기
-        function findProperty(searchData){
-            const targetData = cssProperty.find((data) => data.name === searchData);
+        // 검색하기
+        function findProperty(searchKeyword){
+            const targetData = cssProperty.find((data) => data.name === searchKeyword);
+            const listItem = searchList.querySelectorAll("span");
+            
+            // act 제거
+            listItem.forEach(item => item.classList.remove("act"));
 
             if(targetData == null){
-                searchBoxResult.textContent = "해당 속성은 존재하지 않습니다. 다시 한번 검색해주세요."
+                searchBoxResult.textContent = "해당 속성이 존재하지 않습니다.";
                 return
             } else {
                 searchBoxResult.textContent = targetData.desc;
+
+                // act 추가
+                listItem.forEach((item) => {
+                    if(item.textContent == searchKeyword){
+                        item.classList.add("act");
+                    }
+                })
             }
         }
 
-        // // 클릭하기
-        // searchListSpan.forEach((word) => {
-        //     const clickName = word.querySelectorAll("span").innerText;
-            
-        //     searchListSpan.addEventListener("click", () => {
-        //         console.log(clickName)
-        //     })
-        // })
-
-        // 검색 목록의 각 span 요소에 클릭 이벤트 리스너 추가
-        searchList.querySelectorAll("span").forEach((span) => {
+        // 속성을 클릭
+        document.querySelectorAll(".search__list span").forEach(span => {
             span.addEventListener("click", () => {
-                const clickedProperty = span.textContent; // 클릭한 span의 텍스트 내용 가져오기
-                searchBox.value = clickedProperty; // 입력란의 값을 클릭한 속성으로 설정
-                findProperty(clickedProperty); // 설명을 표시하려면 findProperty 함수 호출
-            });
-        });
+                const keyword = span.innerText;
+                findProperty(keyword);
+            })
+        })
 
-    
+
+        // 검색버튼 클릭
+        searchButton.addEventListener("click", () => {
+            const keyword = searchBox.value;
+            findProperty(keyword);
+        });
     </script>
+ 
 </body>
 </html>
