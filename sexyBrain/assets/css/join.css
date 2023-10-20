@@ -137,6 +137,7 @@
     text-underline-position: under;
 }
 
+/* profil */
 .profil__inner {
     width: 600px;
     height: calc(100vh - 10rem);
@@ -235,8 +236,12 @@
     }
 }
 @media (max-width: 600px){
+    #header1 {
+        position: relative;
+    }
     .aside {
         width: 0;
+        position: absolute;
     }
     .img1,
     .img2 {
@@ -244,14 +249,19 @@
     }
     #main {
         justify-content: center;
+        position: relative;
     }
     .logo {
-        left: 210px;
+        left: 50%;
         top: 1rem;
+        transform: translateX(-50%);
     }
     .logo a {
         width: 90px;
         background-size: contain;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
     .inner {
         margin-left: 0;
