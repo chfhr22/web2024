@@ -25,7 +25,7 @@
 .logo a {
     background-image: url(../img/logo.png);
     background-repeat: no-repeat;
-    width: 100%;
+    width: 120px;
     height: 50px;
     display: block;
 }
@@ -246,8 +246,12 @@
         justify-content: center;
     }
     .logo {
-        left: 14rem;
+        left: 195px;
         top: 1rem;
+    }
+    .logo a {
+        width: 90px;
+        background-size: contain;
     }
     .inner {
         margin-left: 0;
