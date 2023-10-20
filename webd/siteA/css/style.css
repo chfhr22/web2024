@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0px;
     color: #333;
+    box-sizing: border-box;
 }
 a {
     text-decoration: none;
@@ -54,6 +55,7 @@ img {
 }
 #header .nav > ul > li {
     position: relative;
+    text-align: center;
 }
 #header .nav > ul > li > a {
     color: #fff;
