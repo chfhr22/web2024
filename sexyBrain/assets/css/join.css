@@ -257,6 +257,7 @@
     }
     .contents {
         width: 50%;
+        padding-top: 0;
     }
     .photo__wrap h3 {
         font-size: 1rem;
