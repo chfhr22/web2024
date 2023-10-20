@@ -255,4 +255,12 @@
      .like__list .like {
         width: 60%;
      }
+    .footer__logo {
+        width: 30%;
+        margin-left: 1rem;
+    }
+    .name {
+        width: 70%;
+        font-size: 12px;
+    }
 }
