@@ -31,7 +31,7 @@
 }
 
 .img1 {
-    background-image: url(../img/join.jpg);
+    background-image: url(../img/aside.jpg);
     width: 100%;
     min-width: 13rem;
     height: 100%;
@@ -260,16 +260,17 @@
         position: relative;
     }
     .logo {
-        left: 50%;
-        top: 1rem;
-        transform: translateX(-50%);
+        /* left: 50%; */
+        /* top: 1rem; */
+        /* transform: translateX(-50%); */
     }
     .logo a {
         width: 90px;
         background-size: contain;
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
+        /* top: 1rem; */
+        transform: translateX(-80%);
     }
     .inner {
         margin-left: 0;
@@ -295,4 +296,9 @@
         padding-top: 30px;
     }
  
+}
+@media (max-width: 500px){
+    .logo a {
+        transform: translateX(-60%);
+    }
 }
