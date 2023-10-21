@@ -101,6 +101,15 @@
     padding: 0.6rem;
     color: #283269;
 }
+.input__box1::-webkit-input-placeholder {
+    color: #283269;
+}
+.input__box2::-webkit-input-placeholder {
+    color: #283269;
+}
+.input__box3::-webkit-input-placeholder {
+    color: #283269;
+}
 .input__box2 {
     width: 100%;
     height: 3.4rem;
