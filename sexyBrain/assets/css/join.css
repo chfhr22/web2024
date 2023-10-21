@@ -347,6 +347,12 @@
     .locate__wrap > label{
         padding-top: 30px;
     }
+    .input__box1,
+    .input__box2,
+    .input__box3 {
+        font-size: 0.8rem;
+        height: 3rem;
+    }
  
 }
 @media (max-width: 500px){
