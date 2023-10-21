@@ -227,6 +227,7 @@
     .photo__wrap h3 {
         font-size: 1.5rem;
         margin-bottom: 30px;
+        margin-top: 0rem;
     }
     .profil__inner {
         align-items: center;
@@ -244,7 +245,7 @@
     }
     .photo__wrap > button {
         left: 3.3rem;
-        top: 25rem;
+        top: 17rem;
     }
     .locate__wrap {
         margin-top: 100px;
