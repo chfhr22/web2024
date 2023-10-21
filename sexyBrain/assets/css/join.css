@@ -189,9 +189,7 @@
     right: 70px;
     top: 40%;
 }
-.photo__wrap > button > a {
-    
-}
+
 .locate__wrap {
     width: 540px;
     margin-top: 2rem;
@@ -200,11 +198,8 @@
     margin-top: 2rem;
     /* margin-left: 4.3rem; */
 }
-@media (max-width: 1400px){
-    .contents {
-        /* padding-top: 6rem; */
-    }
-}
+
+
 @media (max-width: 900px){
     .inner > h2 {
         font-size: 20px;
