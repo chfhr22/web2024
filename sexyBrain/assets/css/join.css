@@ -47,12 +47,13 @@
 .contents {
     width: 80%;
     height: 100vh;
+    margin: 0 auto;
 }
 
 .inner {
     width: 30%;
     margin-left: 20%;
-    margin-top: 15%;
+    /* margin-top: 15%; */
     display: flex;
     flex-direction: column;
     position: relative;
@@ -175,6 +176,9 @@
     right: 70px;
     top: 40%;
 }
+.photo__wrap > button > a {
+    
+}
 .locate__wrap {
     width: 540px;
     margin-top: 2rem;
@@ -185,21 +189,21 @@
 }
 @media (max-width: 1400px){
     .contents {
-        padding-top: 6rem;
+        /* padding-top: 6rem; */
     }
 }
 @media (max-width: 900px){
     .inner > h2 {
         font-size: 20px;
         width: 250px;
-        top: 0px;
+        /* top: 0px; */
         left: 30px;
     }
     .inner h1 {
         width: 17rem;
         align-items: center;
         text-align: center;
-        margin-top: 5rem;
+        /* margin-top: 5rem; */
         /* margin-left: 0.1rem; */
     }
     .inner p {
@@ -276,7 +280,7 @@
         margin-left: 0;
     }
     .inner h2 {
-        margin-top: 3rem;
+        /* margin-top: 3rem; */
     }
     .contents {
         width: 50%;
@@ -298,6 +302,9 @@
  
 }
 @media (max-width: 500px){
+    .container {
+        justify-content: space-between;
+    }
     .logo a {
         transform: translateX(-60%);
     }

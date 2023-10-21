@@ -1,6 +1,7 @@
 .container {
     width: 100%;
     margin: 0 auto;
+    align-items: center;
 }
 
 /* 버튼 스타일 */
@@ -37,6 +38,7 @@
     height: 47px;
     border: 1px solid #A7BEE7;
     border-radius: 25px;
+    cursor: pointer;
 }
 .btn__style4 {
     display: block;
@@ -46,4 +48,5 @@
     height: 47px;
     border: 1px solid #A7BEE7;
     border-radius: 25px;
+    cursor: pointer;
 }
