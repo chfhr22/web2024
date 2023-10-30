@@ -2,7 +2,7 @@
     color: #283269;
     font-size: 1rem;
 }
-#header {
+.page__header {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -181,7 +181,7 @@
     }
 }
 @media (max-width: 900px) {
-    #header {
+    .page__header {
         height: 70px;
         padding: 5px;
         font-size: 0.9rem;

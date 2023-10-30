@@ -1,0 +1,64 @@
+#wrap {
+    width: 100%;
+    height: 100vh;
+}
+.bg01 {
+    background-image: url(../img/seabg03.gif);
+    background-size: cover;
+    background-color: #000;
+    background-position: center center;
+}
+.iconMusic a {
+    background-image: url(../img/musicIcon.png);
+    background-size: cover;
+    background-position: center center;
+    width: 60px;
+    height: 60px;
+}
+.iconMusic a:hover {
+    width: 100px;
+    height: 100px;
+}
+
+/* musicWrap */
+#musicWrap {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 350px;
+    height: 600px;
+    /* background-color: #000; */
+    background-image: url(../img/musicBox01.jpg);
+    background-size: cover;
+    background-position: center center;
+    border: 2px solid #fff;
+    border-radius: 30px;
+}
+.music__inner {
+
+}
+.music__inner h2 {
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.music__contents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.music__contents .music__view {
+    background-image: url(../img/musicCover01.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+.music__contents .music__control {
+    width: 290px;
+    height: 330px;
+    background-color: #ffffff77;
+    border-radius: 30px;
+}

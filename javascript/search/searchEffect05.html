@@ -33,12 +33,15 @@
             </div>
             <div class="search__star">
                 <ul>
-                    <li>⭐☆☆☆☆</li>
-                    <li>⭐⭐☆☆☆</li>
-                    <li>⭐⭐⭐☆☆</li>
-                    <li>⭐⭐⭐⭐☆</li>
-                    <li>⭐⭐⭐⭐⭐</li>
+                    <li data-star="1" data-desc=" 사용 안함">⭐☆☆☆☆</li>
+                    <li data-star="2" data-desc=" 가끔 사용">⭐⭐☆☆☆</li>
+                    <li data-star="3" data-desc=" 보통 사용">⭐⭐⭐☆☆</li>
+                    <li data-star="4" data-desc=" 자주 사용">⭐⭐⭐⭐☆</li>
+                    <li data-star="5" data-desc=" 필수 사용">⭐⭐⭐⭐⭐</li>
                 </ul>
+            </div>
+            <div class="search__info">
+                <div>CSS 속성 개수 : <span class="num">0</span>개</div>
             </div>
 
             <div class="search__list scroll__style">
@@ -164,28 +167,52 @@
         const searchBox = document.querySelector(".search__box input");
         const searchBoxResult = document.querySelector(".search__box__result");
         const searchButton = document.querySelector(".searchButton");
+        const searchStarItems = document.querySelectorAll(".search__star li");
+        let searchCount = document.querySelector(".search__info .num");
 
         // 출력하기
         function listUpdate(list){
-
-            // <li><strong>align-content</strong> : 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다. <i>⭐☆☆☆☆</i></li>
-            // cssProperty.map((el) => {
-            //     searchList.innerHTML += `<li><strong>${el.name}</strong> : ${el.desc} <i>${el.star}</i></li>`;
-            // })
             let listItem = "";
 
             for(const data of list){
-                const star = ["⭐☆☆☆☆", "⭐⭐☆☆☆", "⭐⭐⭐☆☆", "⭐⭐⭐⭐☆", "⭐⭐⭐⭐⭐"]
-                for(let i=0; i<5; i++){
-                    if(data.star == i+1){
-                        data.star = star[i];
-                    }
-                }
-                listItem += `<li><strong>${data.name}</strong> : ${data.desc}<i>${data.star}</i></li>`
+                let listStar = searchStarItems[data.star-1].innerText;
+                listItem += `<li><strong>${data.name}</strong> : ${data.desc} <em>${listStar}</em></li>`
             }
-            searchList.innerHTML = listItem
+            searchList.innerHTML = listItem;
+            searchCount.textContent = list.length;
         }
         listUpdate(cssProperty);
+
+        // 클릭하기
+        searchStarItems.forEach(star => {
+            star.addEventListener("click", () => {
+                const target = star.dataset.star;
+                // const filterList = cssProperty.filter(data => data.star == target);
+                const filterList = cssProperty.filter(data => data.star >= target);
+                listUpdate(filterList);
+            })
+        })
+        // // 출력하기
+        // function listUpdate(list){
+
+        //     // <li><strong>align-content</strong> : 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다. <i>⭐☆☆☆☆</i></li>
+        //     // cssProperty.map((el) => {
+        //     //     searchList.innerHTML += `<li><strong>${el.name}</strong> : ${el.desc} <i>${el.star}</i></li>`;
+        //     // })
+        //     let listItem = "";
+
+        //     for(const data of list){
+        //         const star = ["⭐☆☆☆☆", "⭐⭐☆☆☆", "⭐⭐⭐☆☆", "⭐⭐⭐⭐☆", "⭐⭐⭐⭐⭐"]
+        //         for(let i=0; i<5; i++){
+        //             if(data.star == i+1){
+        //                 data.star = star[i];
+        //             }
+        //         }
+        //         listItem += `<li><strong>${data.name}</strong> : ${data.desc}<i>${data.star}</i></li>`
+        //     }
+        //     searchList.innerHTML = listItem
+        // }
+        // listUpdate(cssProperty);
     </script>
  
 </body>

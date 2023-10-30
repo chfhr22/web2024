@@ -8,6 +8,9 @@
     height: 7rem;
 }
 
+#header2 .logo {
+    display: none;
+}
 /* main */
 #main {
     display: flex;
@@ -199,6 +202,25 @@
     /* margin-left: 4.3rem; */
 }
 
+/* div로 유효성 검사 후 올바르면 사라진 후 진짜 버튼 나옴 */
+.join {
+    line-height: 3.5;
+    text-align: center;
+}
+.join__form button {
+    display: none;
+}
+
+.msg{
+    display: inline-block;
+    color: red;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+.green {
+    color: green;
+}
 
 @media (max-width: 900px){
     .inner > h2 {
@@ -265,6 +287,17 @@
     }
     main {
         flex-direction: column;
+    }
+    #main > .logo a {
+        display: none;
+    }
+    #header2 .logo a {
+        display: block;
+        background-image: url(../img/logo.png);
+        background-repeat: no-repeat;
+        width: 120px;
+        height: 50px;
+        }
     }
     .aside {
         display: none;
@@ -355,6 +388,7 @@
     .locate__wrap input {
         width: 15rem;
     }
+   
     
 }
 /* @media (max-width: 450px){

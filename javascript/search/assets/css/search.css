@@ -144,6 +144,9 @@ main {
     background-color: blanchedalmond;
     border: 1px solid;
 }
+.search__star li::after {
+    content: attr(data-desc);
+}
 .search__star span {
 }
 .searchButton {
