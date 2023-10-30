@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>베너 01</title>
+
+    <style>
+        @font-face {
+            font-family: 'NEXON Lv2 Gothic';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .nexon {
+            font-family: 'NEXON Lv2 Gothic';
+            font-weight: 400;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-weight: normal;
+        }
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        .blind {
+            width: 0;
+            height: 0;
+            line-height: 0;
+            overflow: hidden;
+            position: absolute;
+            text-indent: -9999px;
+        }
+
+
+        .banner__wrap {
+        }
+        .banner__inner {
+            background: url(img/banner_bg01.jpg) no-repeat center center / cover;
+            text-align: center;
+            padding: 120px 0;
+        }
+        .banner__inner .title {
+            font-size: 50px;
+            line-height: 1;
+            font-weight: 300;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+        .banner__inner .desc {
+            font-size: 24px;
+            line-height: 1.5;
+            font-weight: 300;
+            color: #fff;
+        }
+        .banner__inner .desc a {
+            display: block;
+            margin-bottom: 70px;
+            color: #fff;
+        }
+        .banner__inner .small {
+            text-decoration: underline;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <section id="bannerType" class="banner__wrap nexon">
+        <h2 class="blind">베너 영역</h2>
+        <div class="banner__inner">
+            <h3 class="title">Green</h3>
+            <p class="desc">
+                더 다양한 강의는 유튜브를 통해 제공하고 있습니다.
+                <a href="/" title="유튜브 페이지 이동">youtube.com</a>
+            </p>
+            <span class="small">베너유형 1</span>
+        </div>
+    </section>
+</body>
+</html>
