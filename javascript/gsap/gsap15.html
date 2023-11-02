@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GSAP Scroll Effect09</title>
+    <title>GSAP Scroll Effect15</title>
 
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
@@ -19,11 +19,10 @@
             text-decoration: none;
         }
         body {
-            --bg-color : #222;
-            background-color: var(--bg-color);
             color: #fff;
             font-family: "NexonLv1Gothic";
             font-weight: 300;
+            background-color: #000;
         }
         #parallax__title {
             position: fixed;
@@ -65,26 +64,43 @@
 
         /* parallax__cont */
         #parallax__cont {
-            width: 100%;
+            max-width: 1600px;
+            width: 98%;
+            margin: 0 auto;
         }
         .parallax__item {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;    
-            justify-content: center;
+            width: 1000px;
+            max-width: 70vw;
+            margin: 30vw auto;
+            text-align: left;
+            margin-right: 0;
             position: relative;
+            padding-top: 15vw;
+        }
+        .parallax__item:nth-child(even) {
+            margin-left: 0;
+            text-align: right;
         }
         .parallax__item__num {
+            font-size: 35vw;
             position: absolute;
-            right: 20px;
-            bottom: 20px;
-            font-size: 1vw;
+            left: -5vw;
+            top: -13vw;
+            opacity: 0.07;
+            font-family: "Lato";
+            font-weight: 100;
+        }
+        .parallax__item:nth-child(even) .parallax__item__num {
+            left: auto;
+            right: -5vw;
+        }
+        .parallax__item__title {
+            padding-bottom: 5px;
+            font-weight: 400;
         }
         .parallax__item__imgWrap {
-            width: 50%;
-            margin-right: 30%;
-            padding-bottom: 26.25%;
+            width: 100%;
+            padding-bottom: 56.25%;
             background: #000;
             position: relative;
             overflow: hidden;
@@ -104,18 +120,6 @@
         .parallax__item__img:hover {
             filter: saturate(100%);
             transform: scale(1.025);
-        }
-        .parallax__item__desc {
-            font-size: 3vw;
-            line-height: 1.4;
-            margin-top: 10vw;
-            margin-left: -4vw;
-            margin-right: 2vw;
-            z-index: 100;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            word-break: keep-all;
         }
         #section1 .parallax__item__img {
             background-image: url(img/images01_mini.jpg);
@@ -144,39 +148,29 @@
         #section9 .parallax__item__img {
             background-image: url(img/images09_mini.jpg);
         }
-        #parallax__nav {
-            position: fixed;
-            right: 20px;
-            top: 20px;
-            z-index: 1000;
-            background-color: rgba(0, 0, 0, 0.4);
-            padding: 15px 20px;
-            border-radius: 50px;
+        #section1, #section3, #section5, #section7, #section9 {
+            background-color: #111;
         }
-        #parallax__nav li {
-            list-style: none;
-            display: inline;
+
+        .parallax__item__desc {
+            font-size: 4vw;
+            line-height: 1.4;
+            margin-top: -5vw;
+            margin-left: -4vw;
+            z-index: 100;
+            position: relative;
+            word-break: keep-all;
         }
-        #parallax__nav li a {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            padding: 5px;
-            text-align: center;
-            line-height: 30px;
+        .parallax__item:nth-child(even) .parallax__item__desc {
+            margin-left: auto;
+            margin-right: -4vw;
         }
-        #parallax__nav li a.active {
-            background-color: #fff;
-            color: #000;
-            border-radius: 50%;
-        }
-        
     </style>
 </head>
 <body>
     <header id="parallax__title">
-        <h1>GSAP parallax Effect09</h1>
-        <p>GSAP scrollTrigger - 메뉴 이동 효과</p>
+        <h1>GSAP parallax Effect15</h1>
+        <p>GSAP scrollTrigger - 나타나기 효과</p>
         <ul>
             <li><a href="gsap01.html">1</a></li>
             <li><a href="gsap02.html">2</a></li>
@@ -186,41 +180,30 @@
             <li><a href="gsap06.html">6</a></li>
             <li><a href="gsap07.html">7</a></li>
             <li><a href="gsap08.html">8</a></li>
-            <li class="active"><a href="gsap09.html">9</a></li>
+            <li><a href="gsap09.html">9</a></li>
             <li><a href="gsap10.html">10</a></li>
             <li><a href="gsap11.html">11</a></li>
             <li><a href="gsap12.html">12</a></li>
             <li><a href="gsap13.html">13</a></li>
             <li><a href="gsap14.html">14</a></li>
-            <li><a href="gsap15.html">15</a></li>
+            <li class="active"><a href="gsap15.html">15</a></li>
         </ul>
     </header>
 
-    <nav id="parallax__nav">
-        <ul>
-            <li><a href="#section1" class="active">s1</a></li>
-            <li><a href="#section2">s2</a></li>
-            <li><a href="#section3">s3</a></li>
-            <li><a href="#section4">s4</a></li>
-            <li><a href="#section5">s5</a></li>
-            <li><a href="#section6">s6</a></li>
-            <li><a href="#section7">s7</a></li>
-            <li><a href="#section8">s8</a></li>
-            <li><a href="#section9">s9</a></li>
-        </ul>
-    </nav>
     <main id="parallax__cont">
         <section id="section1" class="parallax__item">
-            <span class="parallax__item__num" >01</span>
+            <span class="parallax__item__num">01</span>
+            <h2 class="parallax__item__title">section1</h2>
             <figure class="parallax__item__imgWrap">
                 <div class="parallax__item__img"></div>
             </figure>
-            <p class="parallax__item__desc ">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            <p class="parallax__item__desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
         </section>
         <!-- //section1 -->
 
         <section id="section2" class="parallax__item">
             <span class="parallax__item__num">02</span>
+            <h2 class="parallax__item__title">section2</h2>
             <figure class="parallax__item__imgWrap">
                 <div class="parallax__item__img"></div>
             </figure>
@@ -230,7 +213,8 @@
 
         <section id="section3" class="parallax__item">
             <span class="parallax__item__num">03</span>
-            <figure class="parallax__item__imgWrap reveal">
+            <h2 class="parallax__item__title">section3</h2>
+            <figure class="parallax__item__imgWrap">
                 <div class="parallax__item__img"></div>
             </figure>
             <p class="parallax__item__desc">매 순간에 최선을 다하고, 끊임없이 변화한다.</p>
@@ -239,15 +223,17 @@
 
         <section id="section4" class="parallax__item">
             <span class="parallax__item__num">04</span>
+            <h2 class="parallax__item__title">section4</h2>
             <figure class="parallax__item__imgWrap">
-                <div class="parallax__item__img" ></div>
+                <div class="parallax__item__img"></div>
             </figure>
             <p class="parallax__item__desc">모든 일에는 기본을 중요하게 생각한다.</p>
         </section>
         <!-- //section4 -->
 
-        <section id="section5" class="parallax__item" data-bgcolor="#fff">
+        <section id="section5" class="parallax__item">
             <span class="parallax__item__num">05</span>
+            <h2 class="parallax__item__title">section5</h2>
             <figure class="parallax__item__imgWrap">
                 <div class="parallax__item__img"></div>
             </figure>
@@ -257,6 +243,7 @@
 
         <section id="section6" class="parallax__item">
             <span class="parallax__item__num">06</span>
+            <h2 class="parallax__item__title">section6</h2>
             <figure class="parallax__item__imgWrap">
                 <div class="parallax__item__img"></div>
             </figure>
@@ -266,6 +253,7 @@
 
         <section id="section7" class="parallax__item">
             <span class="parallax__item__num">07</span>
+            <h2 class="parallax__item__title">section7</h2>
             <figure class="parallax__item__imgWrap">
                 <div class="parallax__item__img"></div>
             </figure>
@@ -275,7 +263,8 @@
 
         <section id="section8" class="parallax__item">
             <span class="parallax__item__num">08</span>
-            <figure class="parallax__item__imgWrap"> 
+            <h2 class="parallax__item__title">section8</h2>
+            <figure class="parallax__item__imgWrap">
                 <div class="parallax__item__img"></div>
             </figure>
             <p class="parallax__item__desc">나는 내가 더 노력할수록 운이 더 좋아진다는 걸 발견했다.</p>
@@ -284,6 +273,7 @@
 
         <section id="section9" class="parallax__item">
             <span class="parallax__item__num">09</span>
+            <h2 class="parallax__item__title">section9</h2>
             <figure class="parallax__item__imgWrap">
                 <div class="parallax__item__img"></div>
             </figure>
@@ -291,40 +281,29 @@
         </section>
         <!-- //section9 -->
     </main>
-
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+    
 
     <script>
-    let links = gsap.utils.toArray("#parallax__nav ul li a");
+        const lenis = new Lenis({
+            duration: 1,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+        });
 
-links.forEach(link => {
-    let element = document.querySelector(link.getAttribute("href")),
+        lenis.on('scroll', (e) => {
+            console.log(e)
 
-    linkST = ScrollTrigger.create({
-        trigger: element,
-        start: "top top"
-    });
+        })
+        function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+        }
 
-    ScrollTrigger.create({
-        trigger: element,
-        start: "top center",
-        end: "bottom center",
-        onToggle: self => setActive(link)
-    });
-
-    link.addEventListener("click", e => {
-        e.preventDefault();
-        gsap.to(window, {duration: 0.5, scrollTo: linkST.start, overwrite: "auto"});
-    })
-});
-
-function setActive(link){
-    links.forEach(el => el.classList.remove("active"));
-    link.classList.add("active");
-}
+        requestAnimationFrame(raf)
     </script>
 </body>
 </html>

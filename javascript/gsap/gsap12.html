@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GSAP Scroll Effect09</title>
+    <title>GSAP Scroll Effect12</title>
 
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
@@ -19,11 +19,11 @@
             text-decoration: none;
         }
         body {
-            --bg-color : #222;
-            background-color: var(--bg-color);
             color: #fff;
             font-family: "NexonLv1Gothic";
             font-weight: 300;
+            background-color: #333;
+            overflow-x: hidden;
         }
         #parallax__title {
             position: fixed;
@@ -64,30 +64,29 @@
         }
 
         /* parallax__cont */
-        #parallax__cont {
-            width: 100%;
-        }
         .parallax__item {
             width: 100%;
             height: 100vh;
-            display: flex;
-            align-items: center;    
-            justify-content: center;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .parallax__item__num {
+            font-size: 5vw;
             position: absolute;
             right: 20px;
             bottom: 20px;
-            font-size: 1vw;
+            font-family: "Lato";
+            font-weight: 100;
+            z-index: 100;
         }
         .parallax__item__imgWrap {
-            width: 50%;
-            margin-right: 30%;
-            padding-bottom: 26.25%;
-            background: #000;
+            width: 30%;
+            padding-bottom: 18%;
             position: relative;
             overflow: hidden;
+            border-radius: 10px;
         }
         .parallax__item__img {
             position: absolute;
@@ -104,18 +103,6 @@
         .parallax__item__img:hover {
             filter: saturate(100%);
             transform: scale(1.025);
-        }
-        .parallax__item__desc {
-            font-size: 3vw;
-            line-height: 1.4;
-            margin-top: 10vw;
-            margin-left: -4vw;
-            margin-right: 2vw;
-            z-index: 100;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            word-break: keep-all;
         }
         #section1 .parallax__item__img {
             background-image: url(img/images01_mini.jpg);
@@ -144,39 +131,19 @@
         #section9 .parallax__item__img {
             background-image: url(img/images09_mini.jpg);
         }
-        #parallax__nav {
-            position: fixed;
-            right: 20px;
-            top: 20px;
-            z-index: 1000;
-            background-color: rgba(0, 0, 0, 0.4);
-            padding: 15px 20px;
-            border-radius: 50px;
-        }
-        #parallax__nav li {
-            list-style: none;
-            display: inline;
-        }
-        #parallax__nav li a {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            padding: 5px;
-            text-align: center;
-            line-height: 30px;
-        }
-        #parallax__nav li a.active {
-            background-color: #fff;
-            color: #000;
-            border-radius: 50%;
+        #parallax__cont {
+            width: 900%;
+            height: 100vh;
+            display: flex;
+            flex-wrap: nowrap;
         }
         
     </style>
 </head>
 <body>
     <header id="parallax__title">
-        <h1>GSAP parallax Effect09</h1>
-        <p>GSAP scrollTrigger - 메뉴 이동 효과</p>
+        <h1>GSAP parallax Effect12</h1>
+        <p>GSAP scrollTrigger - 가로 효과</p>
         <ul>
             <li><a href="gsap01.html">1</a></li>
             <li><a href="gsap02.html">2</a></li>
@@ -186,29 +153,16 @@
             <li><a href="gsap06.html">6</a></li>
             <li><a href="gsap07.html">7</a></li>
             <li><a href="gsap08.html">8</a></li>
-            <li class="active"><a href="gsap09.html">9</a></li>
+            <li><a href="gsap09.html">9</a></li>
             <li><a href="gsap10.html">10</a></li>
             <li><a href="gsap11.html">11</a></li>
-            <li><a href="gsap12.html">12</a></li>
+            <li class="active"><a href="gsap12.html">12</a></li>
             <li><a href="gsap13.html">13</a></li>
             <li><a href="gsap14.html">14</a></li>
             <li><a href="gsap15.html">15</a></li>
         </ul>
     </header>
 
-    <nav id="parallax__nav">
-        <ul>
-            <li><a href="#section1" class="active">s1</a></li>
-            <li><a href="#section2">s2</a></li>
-            <li><a href="#section3">s3</a></li>
-            <li><a href="#section4">s4</a></li>
-            <li><a href="#section5">s5</a></li>
-            <li><a href="#section6">s6</a></li>
-            <li><a href="#section7">s7</a></li>
-            <li><a href="#section8">s8</a></li>
-            <li><a href="#section9">s9</a></li>
-        </ul>
-    </nav>
     <main id="parallax__cont">
         <section id="section1" class="parallax__item">
             <span class="parallax__item__num" >01</span>
@@ -291,40 +245,25 @@
         </section>
         <!-- //section9 -->
     </main>
-
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    
 
     <script>
-    let links = gsap.utils.toArray("#parallax__nav ul li a");
+        let sections = gsap.utils.toArray(".parallax__item");
 
-links.forEach(link => {
-    let element = document.querySelector(link.getAttribute("href")),
-
-    linkST = ScrollTrigger.create({
-        trigger: element,
-        start: "top top"
-    });
-
-    ScrollTrigger.create({
-        trigger: element,
-        start: "top center",
-        end: "bottom center",
-        onToggle: self => setActive(link)
-    });
-
-    link.addEventListener("click", e => {
-        e.preventDefault();
-        gsap.to(window, {duration: 0.5, scrollTo: linkST.start, overwrite: "auto"});
-    })
-});
-
-function setActive(link){
-    links.forEach(el => el.classList.remove("active"));
-    link.classList.add("active");
-}
+        gsap.to(sections, {
+            xPercent: -100 * (sections.length - 1),
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#parallax__cont",
+                pin: true,
+                scrub: 1,
+                snap: 1 / (sections.length - 1),
+                end: "+=2000"
+            }
+        })
     </script>
 </body>
 </html>
